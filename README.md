@@ -19,7 +19,7 @@ Built for the InterSystems **"AI Agents for FHIR"** programming contest
 
 ## Demo video
 
-▶️ **Main demo  coming soon_.**
+▶️ **Main demo  coming soon**
 
 ---
 
