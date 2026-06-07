@@ -126,6 +126,8 @@ retrieved evidence ("use only what you were given, never invent a value"), every
 obeys a **strict contract**, and every action it proposes is a **draft a human
 approves**. I go deeper on the engineering behind that in the next article.
 
+![The guided demo: all twelve agents, each with a description and a Try it link](https://raw.githubusercontent.com/SeanConnelly/ai-studio-for-fhir/main/docs/screenshots/Abnormal%20Results%20Message%20Trace.png)
+
 ## Why InterSystems IRIS is the right platform for AI Agents
 
 Building reliable AI agents usually means stitching together a pile of separate
