@@ -22,7 +22,7 @@ It is my entry in the InterSystems **AI Agents for FHIR** contest, and it ships 
 design, run, and inspect many agents, and then build your own. Everything runs on one
 container, with one command, and no API key.
 
-> Clone the [repo][https://github.com/SeanConnelly/ai-studio-for-fhir/] and run
+> Clone the [repo](https://github.com/SeanConnelly/ai-studio-for-fhir/) and run
 > `docker compose up --build`. Then open the guided demo and run any of the twelve.
 > Every step is yours to inspect.
 
