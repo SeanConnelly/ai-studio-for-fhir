@@ -1,0 +1,69 @@
+{
+  "description": "New Agent wizard starters. The 'Build your own agent' walkthrough is pre-cached against these EXACT definitions (scripts/build-starter-cache.mjs): a judge who creates a starter unchanged and runs it gets a real cached LLM result key-free; any edit honestly switches the run to live/deterministic. Do not edit text fields without rebuilding the starter cache.",
+  "starters": [
+    {
+      "key": "blank",
+      "title": "Blank canvas",
+      "blurb": "A minimal agent you wire up yourself in the builder.",
+      "suggestedName": "",
+      "definition": {
+        "category": "Custom",
+        "description": "A new agent built in the studio.",
+        "trigger": { "type": "manual", "resourceType": null, "condition": "" },
+        "inputs": [{ "key": "patient", "type": "patient", "label": "Patient", "required": true, "default": "Patient/syn-pat-0001" }],
+        "evidence": { "fhir": ["Condition", "Observation", "MedicationRequest"], "sql": ["active_conditions", "recent_labs"], "vector": [] },
+        "agent": { "role": "clinical assistant", "instruction": "Summarize the key clinical facts for this patient and suggest next steps.", "outputSchema": "summary-result" },
+        "action": { "type": "none", "resourceType": null, "approvalRequired": false },
+        "testCase": { "patientId": "Patient/syn-pat-0001", "context": {} }
+      }
+    },
+    {
+      "key": "allergy-audit",
+      "title": "Allergy documentation audit",
+      "blurb": "Checks a chart for missing or unsafe allergy documentation and drafts a Task. Uses a custom output schema - the shape you see is the shape it defines.",
+      "suggestedName": "Allergy Documentation Audit",
+      "definition": {
+        "category": "Quality",
+        "description": "Check whether the patient has allergy information documented and flag charts with gaps or conflicts.",
+        "trigger": { "type": "manual-or-api", "resourceType": "Patient", "condition": "allergy-audit" },
+        "inputs": [{ "key": "patient", "type": "patient", "label": "Patient", "required": true, "default": "Patient/syn-pat-0001" }],
+        "evidence": { "fhir": ["Patient", "AllergyIntolerance", "Condition", "MedicationRequest"], "sql": [], "vector": [] },
+        "agent": { "role": "quality-auditor", "instruction": "Audit this chart for allergy documentation: is an allergy status recorded at all, are listed allergies specific and coded, and could any active medication conflict with a listed allergy? Flag exactly what is missing or risky.", "outputSchema": "chart-audit-result" },
+        "action": { "type": "draft-fhir-create", "resourceType": "Task", "approvalRequired": true },
+        "testCase": { "patientId": "Patient/syn-pat-0001", "context": {} }
+      }
+    },
+    {
+      "key": "discharge-counselling",
+      "title": "Discharge medication counselling",
+      "blurb": "Writes plain-language medication counselling for a recently discharged patient, grounded in the drug-guidance corpus via vector search.",
+      "suggestedName": "Discharge Medication Counselling",
+      "definition": {
+        "category": "Custom",
+        "description": "Plain-language counselling notes for every active medication after discharge - what it is for, how to take it, and what to watch for.",
+        "trigger": { "type": "manual-or-api", "resourceType": "Patient", "condition": "discharge-counselling" },
+        "inputs": [{ "key": "patient", "type": "patient", "label": "Patient", "required": true, "default": "Patient/syn-pat-0085" }],
+        "evidence": { "fhir": ["Patient", "MedicationRequest", "Condition"], "sql": ["medication_history"], "vector": ["drug_guidance"], "vectorQueryFrom": "patient-profile", "vectorTopK": 4 },
+        "agent": { "role": "clinical-pharmacist", "instruction": "For each ACTIVE medication, write 1-2 plain sentences of counselling for the patient: what it is for, how to take it, and the single most important thing to watch for - grounded in the supplied drug guidance. Note anything the prescriber should double-check.", "outputSchema": "summary-result" },
+        "action": { "type": "none", "resourceType": null, "approvalRequired": false },
+        "testCase": { "patientId": "Patient/syn-pat-0085", "context": {} }
+      }
+    },
+    {
+      "key": "metformin-renal",
+      "title": "Metformin renal safety",
+      "blurb": "Checks kidney function against active metformin using a custom eGFR query, the drug-guidance corpus via vector search, and a purpose-built output contract - then drafts a prescriber Task. The walkthrough agent from the build-it-yourself video.",
+      "suggestedName": "Metformin Renal Safety Monitor",
+      "definition": {
+        "category": "Medication Safety",
+        "description": "Monitor renally-cleared medications - especially metformin - against the patient's latest kidney function and draft a prescriber review when a threshold is crossed.",
+        "trigger": { "type": "manual-or-api", "resourceType": "Patient", "condition": "metformin-renal-safety" },
+        "inputs": [{ "key": "patient", "type": "patient", "label": "Patient", "required": true, "default": "Patient/syn-pat-0696" }],
+        "evidence": { "fhir": ["Patient", "Condition", "MedicationRequest"], "sql": [], "vector": ["drug_guidance"], "sources": ["egfr-series"], "vectorQueryFrom": "patient-profile", "vectorTopK": 3 },
+        "agent": { "role": "clinical-pharmacist", "instruction": "Review this patient's kidney function against their active medications - especially metformin. Using the latest eGFR and the retrieved renal dosing guidance, decide for each renally-cleared medication whether it is safe at the current kidney function, needs a dose review, or is contraindicated. Cite the specific eGFR value and the guidance threshold, and recommend the concrete next step for the prescriber.", "outputSchema": "renal-safety-result" },
+        "action": { "type": "draft-fhir-create", "resourceType": "Task", "approvalRequired": true },
+        "testCase": { "patientId": "Patient/syn-pat-0696", "context": {} }
+      }
+    }
+  ]
+}

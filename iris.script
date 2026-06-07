@@ -1,0 +1,12 @@
+; Build-time setup: load the module via IPM (imports + compiles classes,
+; creates the SPA web app, runs Setup.PostInstall → REST app + seed + embeddings).
+zn "FAST"
+zpm "load /home/irisowner/app -v"
+; Start the real interoperability production AFTER the IPM load completes — it
+; cannot start inside IPM's install transaction (<COMMAND> *NoTransaction).
+do ##class(FAST.Runtime.Runtime).EnsureProduction()
+; Re-run the demo working state now the production is up: the starter PA queue
+; (place + submit two orders through the real pipeline, replaying the cached
+; packets) could not run during the install. Idempotent for everything else.
+do ##class(FAST.Seed.SeedLoader).SeedDemoState()
+halt

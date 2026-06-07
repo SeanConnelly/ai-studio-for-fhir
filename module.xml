@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+  <Document name="fhir-agent-studio.ZPM">
+    <Module>
+      <Name>fhir-agent-studio</Name>
+      <Version>1.0.0</Version>
+      <Packaging>module</Packaging>
+      <SourcesRoot>iris/src/cls</SourcesRoot>
+
+      <!-- All ObjectScript: data model, REST API + SPA dispatch, compiler,
+           runtime, seed, setup -->
+      <Resource Name="FAST.PKG"/>
+
+      <!-- Create the REST + SPA web applications, then load seed data and
+           compute embeddings. The built SPA files are placed under
+           ${cspdir}fhir-agent-studio (by the Docker build) and served by
+           FAST.API.Portal. -->
+      <Invoke Class="FAST.Setup" Method="PostInstall"/>
+    </Module>
+  </Document>
+</Export>

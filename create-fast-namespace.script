@@ -1,0 +1,16 @@
+; Build-time: create the dedicated FAST namespace (HS-enabled, interoperability
+; on) and stand up the real FHIR R4 endpoint at /fhir-agent-studio/fhir/r4.
+; Runs BEFORE the IPM module load (iris.script) so FAST exists for zpm.
+;
+; HS.Util.Installer.Foundation.Install creates the database + namespace, maps the
+; HS libraries, enables Ensemble/interoperability, and auto-runs the FHIR
+; InstallNamespace base setup. InstallInstance then registers our specific R4
+; endpoint backed by the JSON interactions strategy.
+do ##class(HS.Util.Installer.Foundation).Install("FAST")
+zn "FAST"
+do ##class(HS.FHIRServer.Installer).InstallInstance("/fhir-agent-studio/fhir/r4", "HS.FHIRServer.Storage.Json.InteractionsStrategy", "hl7.fhir.r4.core@4.0.1")
+; Verify the endpoint registered; abort the build (non-zero) if not, so a broken
+; image is never produced silently.
+if '##class(%SYS.Namespace).Exists("FAST") do $system.Process.Terminate($job, 1)
+write !,"FAST-NAMESPACE-READY",!
+halt

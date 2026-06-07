@@ -1,0 +1,14 @@
+**/.gitkeep
+**/node_modules
+**/dist
+node_modules
+dist
+irisdata
+.git
+.github
+work
+*.log
+.env
+.env.local
+*.env
+grok-api-key.env

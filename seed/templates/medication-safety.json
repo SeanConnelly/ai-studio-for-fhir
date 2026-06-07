@@ -1,0 +1,49 @@
+{
+  "id": "medication-safety",
+  "name": "Medication Safety Assistant",
+  "category": "Medication Safety",
+  "description": "Review a patient's medications for duplicate therapy, interactions, allergy conflicts, and monitoring needs, grounded by drug guidance.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "Patient",
+    "condition": "med-review"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0001"
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "MedicationRequest",
+      "MedicationStatement",
+      "AllergyIntolerance",
+      "Condition",
+      "Observation"
+    ],
+    "sql": [
+      "medication_history"
+    ],
+    "vector": [
+      "drug_guidance"
+    ]
+  },
+  "agent": {
+    "role": "clinical-pharmacist",
+    "instruction": "Classify medications (active, historical, duplicate, uncertain) and produce explainable review findings: duplicate therapy, allergy conflicts, monitoring needs, possible contraindications. Ground explanations in retrieved drug guidance.",
+    "outputSchema": "medication-review"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "DetectedIssue",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0001",
+    "context": {}
+  }
+}

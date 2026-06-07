@@ -1,0 +1,23 @@
+services:
+  iris:
+    build: .
+    image: fhir-agent-studio:latest
+    container_name: fhir-agent-studio
+    restart: unless-stopped
+    ports:
+      - "42773:52773"   # Portal + REST API, served by IRIS
+    healthcheck:
+      test: ["CMD-SHELL", "iris qlist iris | grep -q 'running'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 90s
+
+# Judge / production flow — one command:
+#     docker compose up --build
+# Builds the SPA, bakes ObjectScript + SPA + seed (with embeddings) into the
+# image via IPM (module.xml), and serves everything from IRIS.
+#   Portal:  http://localhost:42773/fhir-agent-studio/
+#   API:     http://localhost:42773/fhir-agent-studio/api/status
+# Host port 42773 is off IRIS's default ranges to avoid colliding with any
+# IRIS the judge already runs.

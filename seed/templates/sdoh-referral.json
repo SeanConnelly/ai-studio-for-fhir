@@ -1,0 +1,52 @@
+{
+  "id": "sdoh-referral",
+  "name": "Social Prescribing Matcher",
+  "category": "Social Care",
+  "description": "Combine the patient's social-needs screening (their own words) with clinical context, then semantically match their reported needs to a real community resource directory via IRIS Vector Search and draft the referral.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "QuestionnaireResponse",
+    "condition": "social-needs-screening"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0061"
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Patient",
+      "Condition",
+      "Observation",
+      "QuestionnaireResponse",
+      "Encounter",
+      "Flag",
+      "ServiceRequest",
+      "CarePlan"
+    ],
+    "sql": [],
+    "vector": [
+      "community_resources"
+    ],
+    "vectorQueryFrom": "social-screening",
+    "vectorTopK": 8
+  },
+  "agent": {
+    "role": "social-prescribing-link-worker",
+    "instruction": "You are a social prescribing link worker. Identify the patient's social needs from their screening answers (quote their own words as evidence) and from the record (e.g. missed appointments suggesting transport barriers). Match each need ONLY to services in the retrieved community resource directory, pick a single best match, and draft the referral plus a warm plain-language message to the patient.",
+    "outputSchema": "sdoh-referral"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "ServiceRequest",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0061",
+    "context": {}
+  }
+}

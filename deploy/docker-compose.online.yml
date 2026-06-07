@@ -1,0 +1,25 @@
+# Online-demo override: bind IRIS to loopback only (Caddy fronts it) and keep
+# the container self-healing. Use together with the base file:
+#
+#   docker compose -f docker-compose.yml -f deploy/docker-compose.online.yml up --build -d
+#
+# See docs/online-demo.md for the full runbook.
+services:
+  iris:
+    ports: !override
+      - "127.0.0.1:42773:52773"
+    restart: always
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: fhir-agent-studio-caddy
+    restart: always
+    network_mode: host        # so Caddy can reach 127.0.0.1:42773
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  caddy-data:
+  caddy-config:

@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "results-followup-result",
+    "name": "Results follow-up result",
+    "rendererKey": "results-followup",
+    "schemaJson": "{\"status\":\"string\",\"summary\":\"string\",\"findings\":\"string[]\",\"recommendations\":\"{priority,owner,text}[]\",\"draftAction\":\"Task|null\"}",
+    "description": "Result contract for the Abnormal Results Follow-Up agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "prior-auth-result",
+    "name": "Prior authorization result",
+    "rendererKey": "criteria-checklist",
+    "schemaJson": "{\"status\":\"string\",\"requestedService\":\"string\",\"policyCriteriaMatched\":\"string[]\",\"missingEvidenceChecklist\":\"string[]\",\"draftJustification\":\"string\",\"draftAction\":\"DocumentReference\"}",
+    "description": "Result contract for the Prior Authorization agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "query-result",
+    "name": "FHIR query result",
+    "rendererKey": "query-result",
+    "schemaJson": "{\"interpretedIntent\":\"string\",\"generatedQuery\":\"string\",\"validationStatus\":\"string\",\"resultPreview\":\"row[]\"}",
+    "description": "Result contract for the NL to FHIR Query agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "summary-result",
+    "name": "Patient summary result",
+    "rendererKey": "summary",
+    "schemaJson": "{\"summary\":\"string\",\"sections\":\"{heading,items[]}[]\",\"recommendations\":\"{priority,owner,text}[]\"}",
+    "description": "Result contract for the Smart Patient Summary agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "med-interactions-result",
+    "name": "Medication safety result",
+    "rendererKey": "med-interactions",
+    "schemaJson": "{\"summary\":\"string\",\"interactions\":\"{severity,drugs[],issue,recommendation}[]\",\"draftAction\":\"DetectedIssue|null\"}",
+    "description": "Result contract for the Medication Safety agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "risk-band-result",
+    "name": "Risk band result",
+    "rendererKey": "risk-band",
+    "schemaJson": "{\"summary\":\"string\",\"riskBand\":\"low|moderate|high\",\"riskDrivers\":\"string[]\",\"draftAction\":\"Task|null\"}",
+    "description": "Result contract for the Readmission Risk agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "lab-trend-result",
+    "name": "Lab explainer result",
+    "rendererKey": "lab-trend",
+    "schemaJson": "{\"summary\":\"string\",\"results\":\"{test,value,meaning}[]\",\"patientMessage\":\"string\",\"whenToWorry\":\"string[]\"}",
+    "description": "Result contract for the Patient-Friendly Lab Explainer agent.",
+    "isSystem": true
+  },
+  {
+    "slug": "chart-audit-result",
+    "name": "Chart audit result",
+    "rendererKey": "generic",
+    "schemaJson": "{\"auditFindings\":[{\"issue\":\"string - what is missing or risky\",\"severity\":\"high|medium|low\",\"detail\":\"string - the specific evidence from this chart\"}],\"allergyStatusDocumented\":\"yes|no|partial\"}",
+    "description": "Structured audit findings: each issue with a severity and the chart evidence behind it. Used by the Allergy Documentation Audit starter - and a demonstration that a schema you author here genuinely shapes the agent's output.",
+    "isSystem": true
+  },
+  {
+    "slug": "renal-safety-result",
+    "name": "Renal medication safety result",
+    "rendererKey": "generic",
+    "schemaJson": "{\"latestEgfr\":\"string - the latest eGFR with unit and date\",\"medicationsReviewed\":[{\"medication\":\"string\",\"safety\":\"safe|review-dose|contraindicated\",\"guidance\":\"string - the threshold cited from the retrieved renal dosing guidance\",\"action\":\"string - the concrete next step for the prescriber\"}],\"draftAction\":\"a FHIR R4 Task for the prescriber covering the most urgent action - {\\\"resourceType\\\":\\\"Task\\\",\\\"status\\\":\\\"draft\\\",\\\"intent\\\":\\\"order\\\",\\\"priority\\\":\\\"urgent\\\"|\\\"routine\\\",\\\"description\\\":\\\"...\\\"} - or null when every medication is safe\"}",
+    "description": "Per-medication renal safety verdicts grounded in the retrieved dosing guidance. Used by the Metformin Renal Safety starter.",
+    "isSystem": true
+  }
+]

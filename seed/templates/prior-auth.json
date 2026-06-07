@@ -1,0 +1,36 @@
+{
+  "id": "prior-auth",
+  "name": "Prior Authorization Evidence Agent",
+  "category": "Administrative",
+  "description": "Assemble patient FHIR evidence and payer-policy guidance for a prior authorization request, then list what supporting evidence is still missing.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "Task",
+    "condition": "prior-auth-request"
+  },
+  "inputs": [
+    { "key": "patient", "type": "patient", "label": "Patient", "required": true, "default": "Patient/pat-prior-auth-001" },
+    { "key": "requestedService", "type": "text", "label": "Requested service", "required": true, "default": "Semaglutide (Wegovy) prior authorization", "placeholder": "e.g. Semaglutide (Wegovy) prior authorization" }
+  ],
+  "evidence": {
+    "fhir": ["Patient", "Coverage", "Condition", "MedicationRequest", "Procedure", "Observation", "DocumentReference"],
+    "sql": ["prior_auth_supporting_evidence"],
+    "vector": ["payer_policies"]
+  },
+  "agent": {
+    "role": "utilization-management-nurse",
+    "instruction": "Build a prior authorization evidence packet for the requested service. Separate evidence found from evidence missing, match it against payer policy criteria retrieved via vector search, and draft a justification. Do not make a coverage decision.",
+    "outputSchema": "prior-auth-packet"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "DocumentReference",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/pat-prior-auth-001",
+    "context": {
+      "requestedService": "Semaglutide (Wegovy) prior authorization"
+    }
+  }
+}

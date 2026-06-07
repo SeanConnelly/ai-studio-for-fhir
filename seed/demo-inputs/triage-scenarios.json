@@ -1,0 +1,13 @@
+{
+  "description": "Prepared triage conversations. For each scenario the phase-1 question set AND every answer-combination handoff are pre-built into the LLM cache (scripts/build-triage-cache.mjs), so any path through the chat replays real Grok output key-free. patient+complaint are cache-key material - never edit a complaint without rebuilding that scenario.",
+  "scenarios": [
+    { "patient": "Patient/syn-pat-0097", "complaint": "chest discomfort for 2 days", "label": "Chest discomfort" },
+    { "patient": "Patient/syn-pat-0001", "complaint": "feeling much more tired than usual with swollen ankles for 5 days", "label": "Fatigue and ankle swelling" },
+    { "patient": "Patient/syn-pat-0101", "complaint": "much more breathless than usual and my inhaler isn't helping", "label": "Breathless - COPD flare" },
+    { "patient": "Patient/syn-pat-0102", "complaint": "feeling hot and shivery since last night and very weak", "label": "Fever in a frail patient" },
+    { "patient": "Patient/syn-pat-0100", "complaint": "feeling dizzy when I stand up and I had a fall this morning", "label": "Dizziness and a fall" },
+    { "patient": "Patient/syn-pat-0079", "complaint": "feeling very low for the last few weeks and not sleeping", "label": "Low mood" },
+    { "patient": "Patient/syn-pat-0075", "complaint": "stomach pain and feeling sick since yesterday", "label": "Stomach pain and nausea" },
+    { "patient": "Patient/syn-pat-0047", "complaint": "aching legs since starting my new tablets", "label": "Possible medication side-effect" }
+  ]
+}

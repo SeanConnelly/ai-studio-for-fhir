@@ -1,0 +1,836 @@
+[
+  {
+    "collection": "payer_policies",
+    "documentId": "glp1-weight-criteria-bmi",
+    "title": "GLP-1 weight management - eligibility BMI threshold",
+    "chunkText": "Coverage for GLP-1 receptor agonists (e.g., semaglutide / Wegovy) for chronic weight management requires a documented baseline body mass index (BMI) of 30 kg/m2 or greater, OR a BMI of 27 kg/m2 or greater with at least one weight-related comorbidity such as type 2 diabetes mellitus, hypertension, or dyslipidemia. The baseline BMI must be recorded within the prior 6 months.",
+    "metadata": {
+      "policyId": "HHP-RX-2031",
+      "payer": "Horizon Health Plan"
+    }
+  },
+  {
+    "collection": "payer_policies",
+    "documentId": "glp1-lifestyle-precondition",
+    "title": "GLP-1 weight management - prior lifestyle intervention",
+    "chunkText": "Prior authorization for GLP-1 weight-management therapy requires documentation of a supervised lifestyle modification program (reduced-calorie diet plus increased physical activity) of at least 3 months duration within the past 12 months, with the outcome recorded. If the member did not achieve at least 5 percent weight loss with lifestyle measures alone, that failure should be documented as supporting medical necessity.",
+    "metadata": {
+      "policyId": "HHP-RX-2032",
+      "payer": "Horizon Health Plan"
+    }
+  },
+  {
+    "collection": "payer_policies",
+    "documentId": "glp1-t2dm-second-line",
+    "title": "GLP-1 for type 2 diabetes - step therapy",
+    "chunkText": "For type 2 diabetes mellitus, GLP-1 receptor agonists are covered as second-line therapy after a trial of metformin unless metformin is contraindicated or not tolerated. Documentation must include the most recent HbA1c (within 3 months), current and prior antidiabetic medications, and the clinical rationale for escalation. An HbA1c at or above 7.0 percent on metformin supports medical necessity.",
+    "metadata": {
+      "policyId": "HHP-RX-2033",
+      "payer": "Horizon Health Plan"
+    }
+  },
+  {
+    "collection": "payer_policies",
+    "documentId": "advanced-imaging-mri-lumbar",
+    "title": "Advanced imaging - lumbar MRI prior authorization",
+    "chunkText": "Lumbar spine MRI requires prior authorization. Approval requires documented conservative management for at least 6 weeks (physical therapy, NSAIDs, or activity modification) without adequate response, OR red-flag features such as suspected cauda equina syndrome, progressive neurologic deficit, suspected malignancy, or infection. The request must specify the clinical question and relevant neurologic findings.",
+    "metadata": {
+      "policyId": "MC-IMG-1190",
+      "payer": "Meridian Care"
+    }
+  },
+  {
+    "collection": "payer_policies",
+    "documentId": "specialty-infusion-site-of-care",
+    "title": "Specialty infusion - site of care policy",
+    "chunkText": "Specialty infusion therapies that are clinically appropriate for home or outpatient administration will not be authorized in a hospital outpatient department unless there is a documented clinical reason (e.g., history of severe infusion reaction requiring monitoring, unstable comorbidity). The first dose may be approved in a monitored setting; subsequent stable doses are expected to transition to the lowest-cost appropriate site of care.",
+    "metadata": {
+      "policyId": "BRM-INF-7705",
+      "payer": "BlueRidge Mutual"
+    }
+  },
+  {
+    "collection": "payer_policies",
+    "documentId": "cgm-coverage-criteria",
+    "title": "Continuous glucose monitor coverage",
+    "chunkText": "Continuous glucose monitoring (CGM) is covered for members with diabetes who are on intensive insulin therapy (three or more injections per day or an insulin pump) OR who have a history of problematic hypoglycemia. Documentation must include the insulin regimen, recent HbA1c, and the frequency of self-monitoring of blood glucose. Reauthorization requires evidence of device use and clinical benefit.",
+    "metadata": {
+      "policyId": "SN-DME-3340",
+      "payer": "Summit National"
+    }
+  },
+  {
+    "collection": "clinical_followup_guidance",
+    "documentId": "critical-result-closed-loop",
+    "title": "Closed-loop communication for critical and abnormal results",
+    "chunkText": "Every clinically significant abnormal diagnostic result must have documented closed-loop follow-up: acknowledgement by a responsible clinician, communication to the patient, and a defined next action with a timeframe. A result is considered an open safety gap if no follow-up Task, ServiceRequest, Appointment, or documented communication exists within the expected interval. Markedly abnormal results warrant follow-up within days, not weeks.",
+    "metadata": {
+      "source": "Patient Safety Standard PS-12"
+    }
+  },
+  {
+    "collection": "clinical_followup_guidance",
+    "documentId": "hba1c-elevated-followup",
+    "title": "Follow-up for markedly elevated HbA1c",
+    "chunkText": "An HbA1c at or above 9.0 percent indicates poorly controlled diabetes and a high risk of complications. Recommended follow-up includes contacting the patient within 2 to 4 weeks, reviewing adherence and barriers, intensifying therapy (adding or titrating agents), and arranging diabetes self-management education. Document the plan and a recheck HbA1c in approximately 3 months.",
+    "metadata": {
+      "source": "Endocrine Care Pathway DM-04"
+    }
+  },
+  {
+    "collection": "clinical_followup_guidance",
+    "documentId": "incidental-pulmonary-nodule",
+    "title": "Incidental pulmonary nodule follow-up (Fleischner)",
+    "chunkText": "Incidentally detected solid pulmonary nodules require structured surveillance based on size and patient risk. A solid nodule of 6 to 8 mm in a low-risk patient is typically followed with CT at 6 to 12 months; larger or higher-risk nodules warrant earlier or more intensive evaluation. Each incidental nodule report must generate an explicit follow-up recommendation and a tracked order so the loop is not lost.",
+    "metadata": {
+      "source": "Fleischner Society guidance (summary)"
+    }
+  },
+  {
+    "collection": "clinical_followup_guidance",
+    "documentId": "abnormal-result-acknowledgement",
+    "title": "Result acknowledgement and patient notification",
+    "chunkText": "Patients should be notified of abnormal results in a timely manner using language they can understand, with a clear statement of what the result means and what happens next. Notification and the patient's understanding (or attempts to reach them) should be documented. For results requiring urgent action, direct contact (phone) is preferred over portal messaging alone.",
+    "metadata": {
+      "source": "Ambulatory Safety Toolkit"
+    }
+  },
+  {
+    "collection": "drug_guidance",
+    "documentId": "warfarin-nsaid-interaction",
+    "title": "Warfarin and NSAID interaction",
+    "chunkText": "Concomitant use of warfarin with NSAIDs significantly increases the risk of gastrointestinal and other bleeding through additive antiplatelet effects and gastric mucosal injury. If analgesia is required, acetaminophen is preferred. If an NSAID is unavoidable, use the lowest effective dose for the shortest duration, consider gastroprotection with a proton pump inhibitor, and monitor INR and for signs of bleeding closely.",
+    "metadata": {
+      "severity": "major"
+    }
+  },
+  {
+    "collection": "drug_guidance",
+    "documentId": "ace-potassium-interaction",
+    "title": "ACE inhibitors and hyperkalemia risk",
+    "chunkText": "ACE inhibitors such as lisinopril reduce potassium excretion and can cause hyperkalemia, especially with renal impairment, potassium supplements, potassium-sparing diuretics, or other RAAS agents. Check serum potassium and renal function within 1 to 2 weeks of initiation or dose increase. Avoid combining multiple potassium-raising agents without monitoring.",
+    "metadata": {
+      "severity": "moderate"
+    }
+  },
+  {
+    "collection": "drug_guidance",
+    "documentId": "metformin-renal-egfr",
+    "title": "Metformin and renal function",
+    "chunkText": "Metformin is contraindicated when the estimated GFR is below 30 mL/min/1.73m2 due to the risk of lactic acidosis. Initiation is not recommended at an eGFR of 30 to 45; if already in use, reduce the dose and monitor renal function. Hold metformin before iodinated contrast in patients with reduced eGFR. Reassess eGFR at least annually, or more often in at-risk patients.",
+    "metadata": {
+      "severity": "major"
+    }
+  },
+  {
+    "collection": "drug_guidance",
+    "documentId": "statin-interaction-cyp3a4",
+    "title": "Statin interactions with CYP3A4 inhibitors",
+    "chunkText": "Simvastatin and atorvastatin are metabolized by CYP3A4; strong inhibitors (certain azole antifungals, macrolide antibiotics, some calcium channel blockers) raise statin exposure and the risk of myopathy and rhabdomyolysis. Use the lowest effective statin dose, consider a statin less dependent on CYP3A4 (e.g., pravastatin or rosuvastatin), and counsel patients to report muscle pain or weakness.",
+    "metadata": {
+      "severity": "moderate"
+    }
+  },
+  {
+    "collection": "drug_guidance",
+    "documentId": "opioid-benzodiazepine",
+    "title": "Opioid and benzodiazepine co-prescribing",
+    "chunkText": "Co-prescribing opioids and benzodiazepines markedly increases the risk of profound sedation, respiratory depression, and death. Avoid the combination where possible. If both are clinically necessary, use the lowest doses, limit duration, counsel on risks, and consider prescribing naloxone. Review the medication list for other CNS depressants.",
+    "metadata": {
+      "severity": "major"
+    }
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "hba1c-explainer-plain",
+    "title": "Understanding your HbA1c result",
+    "chunkText": "The HbA1c test shows your average blood sugar over the past 2 to 3 months. A result below 5.7 percent is in the normal range; 5.7 to 6.4 percent suggests prediabetes; 6.5 percent or higher is in the diabetes range. For many people with diabetes the goal is below 7 percent, but your personal target may differ. A higher number means your blood sugar has been running high and it is worth reviewing your plan with your care team.",
+    "metadata": {
+      "readingLevel": "grade 6"
+    }
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "ldl-explainer-plain",
+    "title": "Understanding your LDL cholesterol",
+    "chunkText": "LDL is sometimes called bad cholesterol because high levels can build up in your arteries over time and raise the risk of heart attack and stroke. Lower is generally better. Diet, exercise, and medicines such as statins can lower LDL. If your LDL is high, your care team may suggest lifestyle changes or medication depending on your overall heart-disease risk.",
+    "metadata": {
+      "readingLevel": "grade 6"
+    }
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "blood-pressure-explainer-plain",
+    "title": "Understanding your blood pressure",
+    "chunkText": "Blood pressure is written as two numbers. The top number (systolic) is the pressure when your heart beats; the bottom number (diastolic) is the pressure when it rests. A reading around 120/80 is healthy for most adults. Readings of 140/90 or higher across visits may mean high blood pressure, which can be managed with lifestyle changes and, if needed, medication.",
+    "metadata": {
+      "readingLevel": "grade 6"
+    }
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "egfr-kidney-explainer",
+    "title": "Understanding your kidney function (eGFR)",
+    "chunkText": "eGFR estimates how well your kidneys filter waste from your blood. A value of 90 or above is generally normal; below 60 for three months or more can indicate chronic kidney disease. If your eGFR is low, your care team may adjust medicines that are cleared by the kidneys and monitor you more closely. Staying hydrated, controlling blood pressure and blood sugar, and avoiding certain painkillers can help protect your kidneys.",
+    "metadata": {
+      "readingLevel": "grade 7"
+    }
+  },
+  {
+    "collection": "screening_guidelines",
+    "documentId": "diabetes-annual-monitoring",
+    "title": "Diabetes - recommended monitoring intervals",
+    "chunkText": "Adults with diabetes should have HbA1c checked at least twice yearly (quarterly if not at goal or after a therapy change), an annual lipid panel, annual urine albumin-to-creatinine ratio and serum creatinine for kidney function, an annual dilated retinal exam, and an annual foot exam. A care gap exists when any of these is overdue relative to its interval.",
+    "metadata": {
+      "source": "Chronic Care Quality Measures"
+    }
+  },
+  {
+    "collection": "screening_guidelines",
+    "documentId": "colorectal-cancer-screening",
+    "title": "Colorectal cancer screening",
+    "chunkText": "Average-risk adults aged 45 to 75 should be screened for colorectal cancer, either with a stool-based test at the recommended interval or colonoscopy every 10 years. A patient in this age range without a documented screening within the appropriate interval represents an open care gap and should be offered screening.",
+    "metadata": {
+      "source": "USPSTF (summary)"
+    }
+  },
+  {
+    "collection": "screening_guidelines",
+    "documentId": "influenza-vaccination",
+    "title": "Annual influenza vaccination",
+    "chunkText": "Annual influenza vaccination is recommended for all persons aged 6 months and older, with particular importance for adults with diabetes, heart disease, lung disease, or chronic kidney disease. A patient with a qualifying condition and no influenza immunization recorded in the current season has an open immunization gap.",
+    "metadata": {
+      "source": "Immunization Schedule (summary)"
+    }
+  },
+  {
+    "collection": "screening_guidelines",
+    "documentId": "statin-primary-prevention",
+    "title": "Statin therapy for primary prevention",
+    "chunkText": "Adults aged 40 to 75 with diabetes or an elevated 10-year cardiovascular risk should be considered for statin therapy for primary prevention. A patient meeting these criteria who is not on a statin and has no documented contraindication or decline represents a potential treatment gap worth review.",
+    "metadata": {
+      "source": "Cardiovascular Prevention Measures"
+    }
+  },
+  {
+    "collection": "readmission_protocols",
+    "documentId": "transitions-of-care-bundle",
+    "title": "Transitions of care bundle to reduce readmission",
+    "chunkText": "A structured transitions-of-care bundle reduces 30-day readmissions: medication reconciliation at discharge, a follow-up appointment scheduled within 7 days, teach-back patient education, a timely discharge summary to the primary care clinician, and a follow-up phone call within 48 to 72 hours. Patients with recent admissions, polypharmacy, or limited support benefit most.",
+    "metadata": {
+      "source": "Care Transitions Program"
+    }
+  },
+  {
+    "collection": "readmission_protocols",
+    "documentId": "heart-failure-readmission",
+    "title": "Heart failure readmission prevention",
+    "chunkText": "High readmission risk in heart failure is associated with prior admissions, suboptimal guideline-directed therapy, and poor self-monitoring. Key interventions include daily weight monitoring with an action plan, diuretic titration guidance, early post-discharge follow-up, and confirming access to medications. Rising weight or worsening symptoms should trigger prompt outreach.",
+    "metadata": {
+      "source": "HF Disease Management"
+    }
+  },
+  {
+    "collection": "readmission_protocols",
+    "documentId": "readmission-risk-factors",
+    "title": "Hospital readmission risk factors",
+    "chunkText": "Documented drivers of 30-day readmission include the number of prior admissions in the past year, length of the index stay, multiple chronic conditions, polypharmacy (typically five or more medications), recent emergency department visits, and social barriers such as lack of transportation or caregiver support. Risk stratification should combine clinical and social factors.",
+    "metadata": {
+      "source": "Population Health Analytics"
+    }
+  },
+  {
+    "collection": "triage_redflags",
+    "documentId": "chest-pain-redflags",
+    "title": "Chest pain red flags",
+    "chunkText": "Chest pain accompanied by shortness of breath, radiation to the arm or jaw, sweating, nausea, or a sense of impending doom may indicate acute coronary syndrome and warrants emergency evaluation. Sudden, severe, tearing chest or back pain raises concern for aortic dissection. Any unstable vital signs or syncope with chest pain is an emergency.",
+    "metadata": {
+      "acuity": "emergent"
+    }
+  },
+  {
+    "collection": "triage_redflags",
+    "documentId": "stroke-fast-redflags",
+    "title": "Stroke warning signs (FAST)",
+    "chunkText": "Sudden facial droop, arm weakness, or speech difficulty are warning signs of stroke; time is critical and emergency services should be activated immediately. Other red flags include sudden severe headache, sudden vision loss, or sudden difficulty walking or loss of balance. Note the time the symptoms began, as it affects treatment options.",
+    "metadata": {
+      "acuity": "emergent"
+    }
+  },
+  {
+    "collection": "triage_redflags",
+    "documentId": "headache-redflags",
+    "title": "Headache red flags",
+    "chunkText": "Most headaches are benign, but red flags warrant urgent assessment: a sudden thunderclap headache reaching maximum intensity within seconds, headache with fever and neck stiffness, new headache with neurologic deficit, headache after head trauma, or a new severe headache in someone over 50. These features require prompt in-person or emergency evaluation.",
+    "metadata": {
+      "acuity": "urgent"
+    }
+  },
+  {
+    "collection": "triage_redflags",
+    "documentId": "abdominal-pain-redflags",
+    "title": "Abdominal pain red flags",
+    "chunkText": "Severe or rapidly worsening abdominal pain, a rigid abdomen, pain with persistent vomiting, blood in stool or vomit, pain with fainting, or pain with fever and inability to keep fluids down may indicate a surgical emergency and warrant emergency evaluation. Pregnancy with abdominal pain requires urgent assessment.",
+    "metadata": {
+      "acuity": "urgent"
+    }
+  },
+  {
+    "collection": "careplan_protocols",
+    "documentId": "diabetes-careplan-targets",
+    "title": "Diabetes care plan targets and steps",
+    "chunkText": "A diabetes care plan typically targets HbA1c below 7 percent (individualized), blood pressure below 130/80 where appropriate, and an LDL goal based on cardiovascular risk. Core steps include medication optimization, diabetes self-management education, annual kidney and eye screening, foot care, and lifestyle support. Progress is tracked against these targets and the plan adjusted when goals are not met.",
+    "metadata": {
+      "condition": "diabetes"
+    }
+  },
+  {
+    "collection": "careplan_protocols",
+    "documentId": "hypertension-careplan",
+    "title": "Hypertension care plan",
+    "chunkText": "Hypertension management combines lifestyle measures (reduced sodium, weight management, physical activity, limiting alcohol) with medication titration to reach the blood pressure goal. Home blood pressure monitoring improves control. The plan should specify the target, the current regimen, the next titration step if uncontrolled, and the follow-up interval.",
+    "metadata": {
+      "condition": "hypertension"
+    }
+  },
+  {
+    "collection": "careplan_protocols",
+    "documentId": "ckd-careplan",
+    "title": "Chronic kidney disease care plan",
+    "chunkText": "A CKD care plan focuses on slowing progression: control blood pressure and blood sugar, use an ACE inhibitor or ARB when albuminuria is present, avoid nephrotoxins (including NSAIDs), adjust renally cleared medication doses, and monitor eGFR and potassium. Referral to nephrology is indicated for advancing disease. Track eGFR trend and albuminuria against goals.",
+    "metadata": {
+      "condition": "ckd"
+    }
+  },
+  {
+    "collection": "careplan_protocols",
+    "documentId": "careplan-off-track",
+    "title": "Recognizing an off-track care plan",
+    "chunkText": "A care plan is off track when target metrics are not improving, key monitoring is overdue, medications have not been intensified despite values above goal, or scheduled visits and education have been missed. The navigator should surface the specific unmet goals, the overdue items, and the next recommended action for clinician review.",
+    "metadata": {
+      "condition": "general"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-pantry",
+    "title": "Cedar Vale Foodbank",
+    "chunkText": "Cedar Vale Foodbank provides emergency three-day food parcels for individuals and families in crisis. Open Tuesday, Thursday and Saturday mornings at the Trinity Centre, 1.2 miles from Cedar Vale Medical Centre. Referral by voucher from a professional (GP practices can issue directly). Also signposts to benefits and debt advice. Contact 01632 960101.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-meal-boxes",
+    "title": "Fresh Start Meal Boxes",
+    "chunkText": "Fresh Start delivers weekly subsidised meal boxes designed for people managing long-term conditions, including diabetes-friendly and heart-healthy menus with fresh produce and simple recipes. Free for 12 weeks on referral from a health professional, then 4.50 GBP per box. Delivers across the Cedar Vale district. Ideal for patients who struggle to afford or prepare healthy food. Contact 01632 960102.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-community-fridge",
+    "title": "Elmsworth Community Fridge",
+    "chunkText": "The Elmsworth Community Fridge redistributes surplus fresh food from local shops - anyone can take what they need, no referral or proof of income required. Open daily 10am to 4pm at Elmsworth Library, 2 miles from Cedar Vale Medical Centre. A low-barrier option for people not ready to accept a foodbank referral. Contact 01632 960103.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-lunch-club",
+    "title": "Silver Spoon Lunch Club",
+    "chunkText": "Silver Spoon runs a hot two-course lunch for over-60s every weekday at Valebrook Community Hall for 3 GBP, with a free minibus pick-up for members who cannot travel. Reduces both food insecurity and social isolation for older adults. Self-referral or via any professional. Contact 01632 960104.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-cooking-skills",
+    "title": "Cook Well on a Budget",
+    "chunkText": "Cook Well on a Budget is a free six-week community cooking course teaching low-cost healthy meals, batch cooking and food budgeting, run by Cedar Vale Adult Learning. Suitable for people newly diagnosed with diabetes or high blood pressure who want practical help eating well cheaply. Creche available. Contact 01632 960105.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-holiday-club",
+    "title": "Cedar Vale Holiday Kitchen",
+    "chunkText": "Holiday Kitchen provides free meals and activities for school-age children during school holidays at three venues across Cedar Vale, supporting families who rely on free school meals in term time. Booking via school or health visitor; GP referrals accepted for families under pressure. Contact 01632 960106.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-food-pantry-membership",
+    "title": "Valebrook Pantry",
+    "chunkText": "Valebrook Pantry is a membership food club: 5 GBP a week buys groceries worth around 20 GBP, including fresh fruit, vegetables and chilled food. A dignified longer-term alternative to emergency food parcels for households on low incomes. No referral needed; membership at the door. Open Wednesday to Saturday. Contact 01632 960107.",
+    "metadata": {
+      "domain": "food"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-transport-dial-a-ride",
+    "title": "Cedar Vale Dial-a-Ride",
+    "chunkText": "Dial-a-Ride provides door-to-door accessible minibus transport for residents who cannot use public transport, including wheelchair users. Bookable for medical appointments, shopping and social trips; 2.50 GBP each way within the district. Annual membership 10 GBP. Book two working days ahead on 01632 960110.",
+    "metadata": {
+      "domain": "transport"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-transport-volunteer-drivers",
+    "title": "Hospital Heroes Volunteer Drivers",
+    "chunkText": "Hospital Heroes volunteer drivers take patients to and from GP, hospital and clinic appointments free of charge, prioritising people with long-term conditions who have missed appointments due to transport problems. Door-to-door, with an escort into the building if needed. Referral from any health professional. Contact 01632 960111.",
+    "metadata": {
+      "domain": "transport"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-transport-taxi-card",
+    "title": "Cedar Vale TaxiCard Scheme",
+    "chunkText": "The council TaxiCard scheme gives subsidised taxi journeys (up to 24 trips a year at 70 percent discount) to residents with mobility problems or long-term health conditions who cannot use buses. Apply through the council with supporting evidence from a GP or community nurse. Contact 01632 960112.",
+    "metadata": {
+      "domain": "transport"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-transport-bus-pass",
+    "title": "Concessionary Travel Pass Support",
+    "chunkText": "The Travel Pass Support service helps older and disabled residents apply for free bus passes and companion passes, including help gathering medical evidence and completing forms. Drop-in sessions at Cedar Vale Library every Monday. Contact 01632 960113.",
+    "metadata": {
+      "domain": "transport"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-transport-patient-transport",
+    "title": "Non-Emergency Patient Transport Advice Line",
+    "chunkText": "The patient transport advice line checks eligibility for NHS non-emergency patient transport for people whose medical condition prevents them travelling independently to hospital appointments, and books journeys for eligible patients. For those not eligible it signposts community transport alternatives. Contact 0808 157 0114.",
+    "metadata": {
+      "domain": "transport"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-housing-support",
+    "title": "Cedar Vale Housing Options Service",
+    "chunkText": "The council Housing Options team helps anyone worried about losing their home: homelessness prevention, emergency accommodation, landlord mediation and help with rent arrears. Statutory duty to assess within 56 days of risk. Walk-in at the Civic Centre or referral by any professional under the duty-to-refer. Contact 01632 960120.",
+    "metadata": {
+      "domain": "housing"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-housing-warm-homes",
+    "title": "Warm Homes Cedar Vale",
+    "chunkText": "Warm Homes offers free energy advice, emergency fuel vouchers, boiler repairs and insulation grants for low-income households, prioritising people with respiratory and cardiovascular conditions living in cold or damp homes. Home visits available. Referral from health professionals fast-tracked in winter. Contact 01632 960121.",
+    "metadata": {
+      "domain": "housing"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-housing-handyperson",
+    "title": "Safe at Home Handyperson Service",
+    "chunkText": "Safe at Home fits grab rails, key safes, ramps and minor adaptations, and does small repairs free of labour charges for over-65s and disabled residents, helping people stay safely in their own homes and reducing falls. Referral from occupational therapy, GP practice or self-referral. Contact 01632 960122.",
+    "metadata": {
+      "domain": "housing"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-housing-sheltered",
+    "title": "Valebrook Sheltered Housing",
+    "chunkText": "Valebrook Housing Association offers sheltered flats for over-55s with an on-site scheme manager, 24-hour emergency call system and communal activities. Suitable for people who are struggling to manage in their current home but do not need residential care. Waiting list managed through the council housing register. Contact 01632 960123.",
+    "metadata": {
+      "domain": "housing"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-housing-tenancy",
+    "title": "Tenancy Sustainment Project",
+    "chunkText": "The Tenancy Sustainment Project gives one-to-one support to people at risk of eviction or struggling with a new tenancy: setting up utilities, benefit claims, budgeting, dealing with arrears and hoarding support. Works with private and social tenants across Cedar Vale. Referral by any agency. Contact 01632 960124.",
+    "metadata": {
+      "domain": "housing"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-money-advice",
+    "title": "Cedar Vale Advice Hub",
+    "chunkText": "The Advice Hub gives free, confidential advice on debt, benefits, employment and housing rights, including benefit checks that typically identify 1,200 GBP a year in unclaimed entitlements. Appointments at the Trinity Centre or by phone; home visits for housebound residents. GP practices can book directly. Contact 01632 960130.",
+    "metadata": {
+      "domain": "money"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-money-prescription-costs",
+    "title": "Prescription Costs Advice Service",
+    "chunkText": "This service helps patients who struggle to afford their medicines: checking exemption eligibility, setting up prescription prepayment certificates (saving money for anyone on two or more items a month), and applying to the NHS Low Income Scheme. Run by the Advice Hub in partnership with community pharmacies. Contact 01632 960131.",
+    "metadata": {
+      "domain": "money"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-money-welfare-rights",
+    "title": "Welfare Rights Disability Benefits Unit",
+    "chunkText": "The Welfare Rights Unit specialises in disability benefit claims and appeals - Personal Independence Payment, Attendance Allowance and Universal Credit health elements - including form filling and tribunal representation. Strong success rate for people with long-term conditions. Referral or self-referral. Contact 01632 960132.",
+    "metadata": {
+      "domain": "money"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-money-fuel-vouchers",
+    "title": "Fuel Bank Voucher Point",
+    "chunkText": "The Fuel Bank issues emergency top-up vouchers for prepayment gas and electricity meters so that households in crisis are not left without heating, hot water or the ability to refrigerate medicines like insulin. Issued same-day via referral from a professional. Contact 01632 960133.",
+    "metadata": {
+      "domain": "money"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-money-budgeting",
+    "title": "Money Mentors Budgeting Support",
+    "chunkText": "Money Mentors pairs trained volunteers with people who want help managing money week to week: budgeting, switching tariffs, opening bank accounts and building small savings. A practical six-session programme rather than crisis debt advice. Referral from any agency or self-referral. Contact 01632 960134.",
+    "metadata": {
+      "domain": "money"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-mh-talking-therapies",
+    "title": "Cedar Vale Talking Therapies",
+    "chunkText": "Cedar Vale Talking Therapies provides free NHS psychological therapy for anxiety, depression and stress, including CBT, counselling and guided self-help, delivered face to face, by phone or online. Self-referral accepted; typical wait two to four weeks for assessment. Suitable for adults 16 and over registered with a local GP. Contact 0808 157 0140.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-mh-mens-shed",
+    "title": "Cedarbridge Men's Shed",
+    "chunkText": "The Men's Shed is a workshop community where men - often retired or recently bereaved - work on practical woodwork and repair projects together. Strong evidence for reducing isolation and low mood in men reluctant to seek formal mental health support. Open Tuesday to Friday; just turn up or be introduced by a link worker. Contact 01632 960141.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-mh-peer-support",
+    "title": "Mind Matters Peer Support Group",
+    "chunkText": "Mind Matters runs weekly peer support groups for adults living with depression, anxiety or long-term mental health conditions, facilitated by trained peers with lived experience. Meets Monday evenings and Thursday afternoons at the Trinity Centre. No referral needed; people can attend with a supporter the first time. Contact 01632 960142.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-mh-bereavement",
+    "title": "Cedar Vale Bereavement Support",
+    "chunkText": "Free one-to-one and group bereavement support for adults grieving a death, delivered by trained volunteers with clinical supervision. No time limit on how recently the loss occurred. Sessions at the hospice wellbeing centre or by phone. Self-referral or via GP. Contact 01632 960143.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-mh-crisis-line",
+    "title": "Safe Haven Evening Sanctuary",
+    "chunkText": "Safe Haven is an out-of-hours mental health sanctuary open 6pm to 1am every night for anyone in distress or approaching crisis - a calm alternative to A and E, staffed by mental health practitioners and peer workers. No appointment or referral needed; just come in. Located behind Cedar Vale bus station. Contact 0808 157 0144.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-mh-wellbeing-course",
+    "title": "Living Well Wellbeing Courses",
+    "chunkText": "Living Well runs free six-week courses on stress management, sleep, mindfulness and living with a long-term condition, co-delivered by health trainers and people with lived experience. Daytime and evening options across Cedar Vale. Good first step for people not ready for therapy. Contact 01632 960145.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-social-befriending",
+    "title": "Cedar Companions Befriending",
+    "chunkText": "Cedar Companions matches isolated adults with a volunteer befriender for a weekly visit or phone call, plus a monthly social meetup with transport provided. Aimed at people who rarely see friends or family, including older adults and those housebound by health problems. Referral from any professional or family member. Contact 01632 960150.",
+    "metadata": {
+      "domain": "social-isolation"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-social-walking-group",
+    "title": "Valebrook Wellbeing Walks",
+    "chunkText": "Free volunteer-led group walks every Tuesday and Saturday morning from Valebrook Park, with short, flat 30-minute routes suitable for people returning to activity after illness and longer routes for the more confident. A social, low-pressure way to be more active and meet people. Just turn up. Contact 01632 960151.",
+    "metadata": {
+      "domain": "social-isolation"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-social-community-choir",
+    "title": "Sing Cedar Vale Community Choir",
+    "chunkText": "A no-audition community choir meeting Wednesday evenings at St Mary's Hall. Singing in a group is linked to improved mood, breathing control and social connection - the choir welcomes people with COPD and long-term conditions and runs a seated section. First three sessions free. Contact 01632 960152.",
+    "metadata": {
+      "domain": "social-isolation"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-social-good-neighbours",
+    "title": "Good Neighbours Cedar Vale",
+    "chunkText": "Good Neighbours volunteers help with small everyday tasks that keep people independent: collecting prescriptions, light shopping, changing light bulbs, accompanying someone to the post office. Particularly useful for people recently discharged from hospital or without nearby family. Contact 01632 960153.",
+    "metadata": {
+      "domain": "social-isolation"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-carers-support",
+    "title": "Cedar Vale Carers Centre",
+    "chunkText": "The Carers Centre supports unpaid carers of any age: statutory carer assessments, emergency respite planning, benefits advice for carers, peer groups and free counselling. Carers of people with dementia get a dedicated keyworker. Referral from GP practice flags carer status in the record. Contact 01632 960160.",
+    "metadata": {
+      "domain": "carers"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-carers-young",
+    "title": "Young Carers Project",
+    "chunkText": "The Young Carers Project supports children and young people aged 8 to 18 who look after a family member, offering respite activities, homework clubs, school liaison and family support planning. Referral from school, GP or social care with family consent. Contact 01632 960161.",
+    "metadata": {
+      "domain": "carers"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-activity-exercise-referral",
+    "title": "Active Cedar Vale Exercise Referral",
+    "chunkText": "The exercise referral scheme gives 12 weeks of supervised gym, swim or class sessions at half price for patients with conditions like type 2 diabetes, hypertension, obesity or mild depression, with a personalised programme from a qualified referral instructor. GP or practice nurse referral required. Contact 01632 960170.",
+    "metadata": {
+      "domain": "physical-activity"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-activity-strength-balance",
+    "title": "Steady Steps Strength and Balance",
+    "chunkText": "Steady Steps is a 24-week evidence-based strength and balance programme for over-65s at risk of falls, shown to reduce falls by around a third. Classes at four venues with a home exercise option. Referral from GP, physiotherapy or the falls service after a recent fall or fear of falling. Contact 01632 960171.",
+    "metadata": {
+      "domain": "physical-activity"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-activity-health-walks",
+    "title": "Cedar Vale Health Walks Plus",
+    "chunkText": "Health Walks Plus combines a gentle walk with a free health check stop - blood pressure and wellbeing chat with a community health trainer - every Friday from the Civic Centre. Designed for people advised to be more active after a health review. No booking needed. Contact 01632 960172.",
+    "metadata": {
+      "domain": "physical-activity"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-addiction-drugs-alcohol",
+    "title": "Turning Point Cedar Vale",
+    "chunkText": "Turning Point provides free, confidential drug and alcohol support: structured treatment, detox referral, harm reduction, needle exchange and family support. Same-day drop-in assessment every weekday morning. Self-referral or professional referral; treatment is voluntary and non-judgemental. Contact 0808 157 0180.",
+    "metadata": {
+      "domain": "addiction"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-addiction-stop-smoking",
+    "title": "Smokefree Cedar Vale",
+    "chunkText": "Smokefree offers free 12-week quit programmes with weekly support and free nicotine replacement or vape starter kits, tripling the chance of quitting successfully compared with willpower alone. Priority access for people with COPD, heart disease or diabetes and for pregnant women. Contact 01632 960181.",
+    "metadata": {
+      "domain": "addiction"
+    }
+  },
+  {
+    "collection": "community_resources",
+    "documentId": "cr-digital-inclusion",
+    "title": "Get Online Cedar Vale",
+    "chunkText": "Get Online lends tablets with free data and teaches basic digital skills - video calls, the NHS App, online prescriptions and benefits claims - through friendly weekly sessions at local libraries. Aimed at people who miss out on services because they are not online. Referral or drop-in. Contact 01632 960190.",
+    "metadata": {
+      "domain": "digital-inclusion"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-cardia-dm2",
+    "title": "CARDIA-DM2 (NCT9A100231) - Cardiovascular outcomes in type 2 diabetes - Phase 3, recruiting",
+    "chunkText": "CARDIA-DM2, phase 3, recruiting at Cedar Vale Research Unit. Inclusion: adults aged 40 to 75 with type 2 diabetes mellitus, HbA1c between 7.5 and 11.5 percent, on a stable dose of metformin, with at least one additional cardiovascular risk factor (hypertension, dyslipidaemia, obesity, or established cardiovascular disease). Exclusion: type 1 diabetes, eGFR below 30, pregnancy, active malignancy. Washout: none required. Coordinator: 01632 960201.",
+    "metadata": {
+      "domain": "diabetes"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-metabolic-wt",
+    "title": "METABOLIC-WT (NCT9A100232) - Weight management with comorbidity - Phase 3, recruiting",
+    "chunkText": "METABOLIC-WT, phase 3, recruiting. Inclusion: adults 18 to 70 with BMI 30 or greater, or BMI 27 or greater with type 2 diabetes or hypertension, who have attempted lifestyle modification. Exclusion: CURRENT GLP-1 receptor agonist therapy (semaglutide, liraglutide) - a 12-week washout is required before screening; prior bariatric surgery within 2 years; uncontrolled thyroid disease; history of pancreatitis or medullary thyroid cancer. Coordinator: 01632 960202.",
+    "metadata": {
+      "domain": "obesity"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-shape-up",
+    "title": "SHAPE-UP (NCT9A100233) - Structured lifestyle programme for obesity - Phase 4, recruiting",
+    "chunkText": "SHAPE-UP, phase 4 pragmatic trial of a structured digital lifestyle programme, recruiting. Inclusion: adults with BMI 35 or greater with at least one weight-related comorbidity (type 2 diabetes, hypertension, obstructive sleep apnoea). Current weight-loss medication including GLP-1 therapy is PERMITTED and recorded as a covariate. Exclusion: pregnancy, active eating disorder, inability to use a smartphone app. Coordinator: 01632 960203.",
+    "metadata": {
+      "domain": "obesity"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-nephro-guard",
+    "title": "NEPHRO-GUARD (NCT9A100234) - Slowing CKD progression - Phase 3, recruiting",
+    "chunkText": "NEPHRO-GUARD, phase 3, recruiting. Inclusion: adults with chronic kidney disease stage 3 (eGFR 30 to 59 mL/min/1.73m2), with or without type 2 diabetes, on a stable ACE inhibitor or ARB for at least 4 weeks. Exclusion: eGFR below 25 or on dialysis, acute kidney injury within 3 months, serum potassium above 5.5 mmol/L, renal transplant. Requires a documented eGFR within the last 6 months. Coordinator: 01632 960204.",
+    "metadata": {
+      "domain": "renal"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-preserve-hf",
+    "title": "PRESERVE-HF (NCT9A100235) - Heart failure with preserved ejection fraction - Phase 3, recruiting",
+    "chunkText": "PRESERVE-HF, phase 3, recruiting. Inclusion: adults 50 and older with symptomatic heart failure, NYHA class II to III, on a loop diuretic, with at least one heart-failure hospitalization or emergency attendance in the prior 12 months. An echocardiogram within 12 months is required to confirm preserved ejection fraction. Exclusion: recent myocardial infarction (3 months), severe valve disease, eGFR below 20. Coordinator: 01632 960205.",
+    "metadata": {
+      "domain": "cardiology"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-breathe-easy",
+    "title": "BREATHE-EASY (NCT9A100236) - Triple inhaled therapy in COPD - Phase 3, recruiting",
+    "chunkText": "BREATHE-EASY, phase 3, recruiting. Inclusion: adults 40 and older with a clinical diagnosis of COPD on at least one maintenance inhaler (e.g. tiotropium), with a smoking history, and at least one exacerbation in the prior 24 months. Exclusion: primary diagnosis of asthma, long-term oxygen therapy, respiratory infection within 4 weeks. Spirometry within 12 months preferred; if absent it can be performed at screening. Coordinator: 01632 960206.",
+    "metadata": {
+      "domain": "respiratory"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-mind-forward",
+    "title": "MIND-FORWARD (NCT9A100237) - Augmentation in persistent depression - Phase 2, recruiting",
+    "chunkText": "MIND-FORWARD, phase 2, recruiting. Inclusion: adults 18 to 65 with depressive disorder on a stable SSRI (e.g. sertraline) for at least 8 weeks with an incomplete response. Exclusion: bipolar disorder, psychosis, significant suicide risk, substance dependence within 12 months. Requires a recent PHQ-9 score; if not documented the screening visit will administer one. Coordinator: 01632 960207.",
+    "metadata": {
+      "domain": "mental-health"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-rhythm-safe",
+    "title": "RHYTHM-SAFE (NCT9A100238) - Stroke prevention in atrial fibrillation - Phase 3b, recruiting",
+    "chunkText": "RHYTHM-SAFE, phase 3b, recruiting. Inclusion: adults with non-valvular atrial fibrillation currently on a direct oral anticoagulant (e.g. apixaban), aged 60 or older. Exclusion: mechanical heart valve, severe renal impairment (eGFR below 25), major bleeding within 6 months, dual antiplatelet therapy. Coordinator: 01632 960208.",
+    "metadata": {
+      "domain": "cardiology"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-lipid-reach",
+    "title": "LIPID-REACH (NCT9A100239) - Intensive LDL lowering on top of statins - Phase 3, recruiting",
+    "chunkText": "LIPID-REACH, phase 3, recruiting. Inclusion: adults 18 to 80 with LDL cholesterol 130 mg/dL or above despite a stable high-intensity statin (e.g. atorvastatin 40-80mg) for at least 8 weeks. Exclusion: statin intolerance as the reason for elevated LDL, triglycerides above 400 mg/dL, liver enzymes more than 3 times the upper limit. Requires a lipid panel within the last 6 months. Coordinator: 01632 960209.",
+    "metadata": {
+      "domain": "lipids"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-steady-gait",
+    "title": "STEADY-GAIT (NCT9A100240) - Falls prevention in older adults - Phase 4, recruiting",
+    "chunkText": "STEADY-GAIT, phase 4 community trial, recruiting. Inclusion: adults 70 and older living independently with a fall in the prior 12 months or a documented falls-risk alert, able to walk indoors unaided. Exclusion: residential care, severe cognitive impairment, progressive neurological disease. Coordinator: 01632 960210.",
+    "metadata": {
+      "domain": "elderly-care"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-glucose-sense",
+    "title": "GLUCOSE-SENSE (NCT9A100241) - Continuous glucose monitoring in poorly controlled T2DM - Phase 4, recruiting",
+    "chunkText": "GLUCOSE-SENSE, phase 4, recruiting. Inclusion: adults with type 2 diabetes and HbA1c 9.0 percent or above despite at least two glucose-lowering agents, willing to wear a continuous glucose monitor for 12 months. Exclusion: type 1 diabetes, current CGM use, skin conditions preventing sensor wear. Requires an HbA1c within the last 3 months. Coordinator: 01632 960211.",
+    "metadata": {
+      "domain": "diabetes"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-pressure-down",
+    "title": "PRESSURE-DOWN (NCT9A100242) - Resistant hypertension device study - Phase 2, recruiting",
+    "chunkText": "PRESSURE-DOWN, phase 2 device study, recruiting. Inclusion: adults 18 to 75 with office systolic blood pressure 150 mmHg or above despite at least two antihypertensive agents including an ACE inhibitor or ARB (e.g. lisinopril plus amlodipine). Exclusion: secondary hypertension, eGFR below 40, prior renal denervation. Ambulatory blood pressure monitoring is performed at screening. Coordinator: 01632 960212.",
+    "metadata": {
+      "domain": "cardiology"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-flu-shield",
+    "title": "FLU-SHIELD 65 (NCT9A100243) - High-dose influenza vaccine in over-65s - Phase 3, recruiting seasonally",
+    "chunkText": "FLU-SHIELD 65, phase 3, seasonal recruitment. Inclusion: adults 65 and older, community dwelling, regardless of chronic conditions; prior-season influenza vaccination is permitted but the current season's vaccine must NOT yet have been given. Exclusion: egg anaphylaxis, immunosuppressive therapy, vaccination already received this season. Coordinator: 01632 960213.",
+    "metadata": {
+      "domain": "vaccines"
+    }
+  },
+  {
+    "collection": "trial_criteria",
+    "documentId": "trial-joint-relief",
+    "title": "JOINT-RELIEF (NCT9A100244) - Knee osteoarthritis injection trial - Phase 2, recruiting",
+    "chunkText": "JOINT-RELIEF, phase 2, recruiting. Inclusion: adults 45 to 80 with symptomatic knee osteoarthritis for 6 months or more despite oral analgesia or physiotherapy. Exclusion: knee replacement (either knee), intra-articular injection within 3 months, inflammatory arthritis, anticoagulation that cannot be safely paused. Recent imaging helpful but not required. Coordinator: 01632 960214.",
+    "metadata": {
+      "domain": "musculoskeletal"
+    }
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "haemoglobin-explainer-plain",
+    "title": "Understanding your haemoglobin (blood count)",
+    "chunkText": "Haemoglobin is the part of your red blood cells that carries oxygen around your body. For most adults a normal level is roughly 12 to 16 g/dL for women and 13 to 17 g/dL for men. A low level is called anaemia and can make you feel tired, breathless or dizzy; common causes include low iron, which is very treatable. A mildly low result is usually not an emergency - your care team may check your iron levels or repeat the test."
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "tsh-thyroid-explainer-plain",
+    "title": "Understanding your thyroid test (TSH)",
+    "chunkText": "TSH is a hormone that tells your thyroid gland how hard to work. A typical normal range is about 0.4 to 4.0 mIU/L. A high TSH usually means the thyroid is working a little too slowly (which can cause tiredness or weight gain) and a low TSH means it may be too active. Small changes are common and often just watched with a repeat test; treatment, when needed, is usually a simple daily tablet."
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "creatinine-explainer-plain",
+    "title": "Understanding your creatinine result",
+    "chunkText": "Creatinine is a waste product your muscles make every day; healthy kidneys clear it from the blood. A typical normal range is about 0.6 to 1.3 mg/dL, slightly higher in people with more muscle. A rising creatinine can mean the kidneys are filtering less well, which matters most for people with diabetes or high blood pressure. Drinking enough fluids and reviewing certain medicines with your care team helps protect kidney function."
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "bmi-explainer-plain",
+    "title": "Understanding your BMI (body mass index)",
+    "chunkText": "BMI is a simple estimate of body size from your height and weight. A BMI of 18.5 to 24.9 kg/m2 is described as the healthy range, 25 to 29.9 as overweight, and 30 or above as obesity. BMI is a rough guide, not a judgement - muscle, build and background all matter. Even a 5 percent weight loss can meaningfully improve blood sugar, blood pressure and joint pain, and support is available rather than willpower alone."
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "alt-liver-explainer-plain",
+    "title": "Understanding your liver test (ALT)",
+    "chunkText": "ALT is an enzyme found mainly in the liver. A typical normal range is roughly 7 to 55 U/L. A mildly raised ALT is common and often comes from fatty liver, certain medicines, or alcohol, and frequently settles on its own. Your care team may simply repeat the test, review your medicines, or suggest gentle lifestyle changes. A mildly raised result on its own is rarely urgent."
+  },
+  {
+    "collection": "patient_education",
+    "documentId": "bnp-heart-explainer-plain",
+    "title": "Understanding your BNP heart test",
+    "chunkText": "BNP is a hormone the heart releases when it is working harder than usual, often used to check how heart failure is doing. Levels under about 100 pg/mL are usually normal; higher levels suggest the heart is under strain. If your BNP is raised, daily weights, taking water tablets as prescribed, and limiting salt all help - and telling your care team quickly about sudden weight gain or worse breathlessness makes a real difference."
+  }
+]

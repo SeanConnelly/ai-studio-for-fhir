@@ -1,0 +1,35 @@
+{
+  "id": "nl-to-fhir-query",
+  "name": "Natural Language to FHIR Query Agent",
+  "category": "Developer Experience",
+  "description": "Convert a natural language question into a transparent, read-only FHIR search or SQL query, validate it as safe, execute it, and show the generated query alongside a result preview.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": null,
+    "condition": "natural-language-query"
+  },
+  "inputs": [
+    { "key": "question", "type": "text", "label": "Question", "required": true, "default": "Show diabetic patients with HbA1c above 9 in the last 6 months", "placeholder": "Ask in plain English…" }
+  ],
+  "evidence": {
+    "fhir": [],
+    "sql": [],
+    "vector": []
+  },
+  "agent": {
+    "role": "interoperability-developer",
+    "instruction": "Convert the user's natural language question into a safe, read-only FHIR search or SQL-style query. Show interpreted intent, the generated query, a validation status, the result preview, and any limitations. Never generate a write operation.",
+    "outputSchema": "nl-query-result"
+  },
+  "action": {
+    "type": "read-only",
+    "resourceType": null,
+    "approvalRequired": false
+  },
+  "testCase": {
+    "patientId": null,
+    "context": {
+      "question": "Show diabetic patients with HbA1c above 9 in the last 6 months"
+    }
+  }
+}

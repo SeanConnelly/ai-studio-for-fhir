@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "patient-everything",
+    "name": "Patient $everything (compact bundle)",
+    "kind": "everything",
+    "spec": "{}",
+    "description": "A compact, field-extracted bundle of the patient's clinically relevant resources.",
+    "isSystem": true
+  },
+  {
+    "slug": "active-conditions",
+    "name": "Active conditions",
+    "kind": "sql",
+    "spec": "{\"sql\":\"SELECT code, clinicalStatus FROM HSFHIR_X0001_S.Condition WHERE patient = '{{patientRef}}' AND clinicalStatus LIKE '%active%'\"}",
+    "description": "Active problem list for the patient (read-only, guarded).",
+    "isSystem": true
+  },
+  {
+    "slug": "recent-abnormal-labs",
+    "name": "Recent abnormal labs",
+    "kind": "fhir-gather",
+    "spec": "{\"resourceTypes\":[\"Observation\",\"DiagnosticReport\"]}",
+    "description": "Recent laboratory observations and reports for the patient.",
+    "isSystem": true
+  },
+  {
+    "slug": "payer-policy-search",
+    "name": "Payer policy search",
+    "kind": "vector",
+    "spec": "{\"collection\":\"payer_policies\",\"queryFrom\":\"input.requestedService\",\"topK\":5}",
+    "description": "Native IRIS Vector Search over payer policy documents.",
+    "isSystem": true
+  },
+  {
+    "slug": "drug-guidance-search",
+    "name": "Drug interaction guidance search",
+    "kind": "vector",
+    "spec": "{\"collection\":\"drug_guidance\",\"queryFrom\":\"input.question\",\"topK\":4}",
+    "description": "Native IRIS Vector Search over drug-interaction guidance.",
+    "isSystem": true
+  },
+  {
+    "slug": "diagnosis-terminology",
+    "name": "Diagnosis terminology resolve",
+    "kind": "terminology",
+    "spec": "{\"textFrom\":\"input.term\",\"system\":\"SNOMED\"}",
+    "description": "Resolve a diagnosis phrase to a SNOMED CT code before coded searches.",
+    "isSystem": true
+  },
+  {
+    "slug": "egfr-series",
+    "name": "Kidney function (eGFR) results",
+    "kind": "sql",
+    "spec": "{\"sql\":\"SELECT o.dateStart AS Observed, vq.value AS eGFR FROM HSFHIR_X0001_S.Observation o JOIN HSFHIR_X0001_S_Observation.valueQuantity vq ON vq.Key = o.Key WHERE o.patient = '{{patientRef}}' AND o.code LIKE '%33914-3%' ORDER BY o.dateStart DESC\"}",
+    "description": "All eGFR results for the patient, newest first (read-only, guarded). Used by the Metformin Renal Safety starter.",
+    "isSystem": true
+  }
+]

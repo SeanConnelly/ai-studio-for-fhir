@@ -1,0 +1,27 @@
+# Reverse proxy for the public online demo.
+#
+# Replace demo.example.com with your domain (Caddy then provisions TLS
+# automatically). For an IP-only demo, change the site address to :80.
+#
+# SECURITY MODEL: only the two SPAs, the REST API, and the FHIR R4 endpoint are
+# proxied. Everything else on the IRIS web server - in particular the
+# Management Portal (/csp/sys) and other system CSP apps - is NOT reachable
+# from the internet. Change the default IRIS passwords anyway (runbook step 4):
+# defense in depth.
+
+demo.example.com {
+	encode gzip
+
+	# Land on the judges' demo guide
+	redir / /clinical/#/demo 302
+
+	@app path /fhir-agent-studio/* /clinical/*
+	handle @app {
+		reverse_proxy 127.0.0.1:42773
+	}
+
+	# Everything else (incl. /csp/sys Management Portal) is blocked.
+	handle {
+		respond "Not available on the public demo. Clone the repo and run `docker compose up --build` for the full instance." 404
+	}
+}

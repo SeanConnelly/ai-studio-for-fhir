@@ -1,0 +1,64 @@
+{
+  "id": "gaps-in-care",
+  "name": "Gaps in Care Finder",
+  "category": "Population Health",
+  "description": "Scan a patient cohort for preventive and chronic-care gaps using explainable rules, then draft tailored outreach.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": null,
+    "condition": "cohort-scan"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0001"
+    },
+    {
+      "key": "gapType",
+      "type": "enum",
+      "label": "Care gap",
+      "required": true,
+      "default": "diabetes-a1c",
+      "options": [
+        "diabetes-a1c",
+        "bp-control",
+        "cancer-screening",
+        "immunization"
+      ]
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Patient",
+      "Immunization",
+      "Observation",
+      "Condition",
+      "Procedure",
+      "Encounter"
+    ],
+    "sql": [
+      "overdue_screenings",
+      "diabetes_a1c_followup"
+    ],
+    "vector": []
+  },
+  "agent": {
+    "role": "care-gap-analyst",
+    "instruction": "Identify preventive or chronic-care gaps with explicit, explainable rules. For each patient explain why they are in the gap list, the last relevant evidence, and the recommended next action.",
+    "outputSchema": "care-gaps"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "Task",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0001",
+    "context": {
+      "gapType": "diabetes-a1c"
+    }
+  }
+}

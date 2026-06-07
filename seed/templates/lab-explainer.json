@@ -1,0 +1,49 @@
+{
+  "id": "lab-explainer",
+  "name": "Patient-Friendly Lab Explainer",
+  "category": "Patient Engagement",
+  "description": "Turn a patient's lab results into warm plain-language explanations: per-test meaning, normal ranges, trends across readings, practical suggestions, and questions to ask the doctor - every explanation grounded in trusted patient-education content retrieved by vector search for THEIR abnormal results.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "Observation",
+    "condition": "explain-lab"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0001"
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Patient",
+      "Observation",
+      "DiagnosticReport"
+    ],
+    "sql": [
+      "recent_labs"
+    ],
+    "vector": [
+      "patient_education"
+    ],
+    "vectorQueryFrom": "abnormal-results",
+    "vectorTopK": 4
+  },
+  "agent": {
+    "role": "patient-educator",
+    "instruction": "Explain the lab test, classify the current result against its reference range, compare with prior results, and describe the trend in plain language. Suggest questions for the clinician and include a safety disclaimer. Do not diagnose or overstate certainty.",
+    "outputSchema": "lab-explanation"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "Communication",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0001",
+    "context": {}
+  }
+}

@@ -1,0 +1,1006 @@
+[
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-abnormal-001",
+  "patientRef": "Patient/pat-abnormal-001",
+  "tags": "results-followup,nl-query",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-abnormal-001",
+   "name": [
+    {
+     "use": "official",
+     "family": "Taylor",
+     "given": [
+      "Jordan"
+     ],
+     "prefix": [
+      "Mr"
+     ]
+    }
+   ],
+   "gender": "male",
+   "birthDate": "1968-03-12",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "7123987659"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40118262"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "14 Orchard Way"
+     ],
+     "city": "Cedar Vale",
+     "postalCode": "CV2 4QF"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0770 118 2620"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-t2dm-abnormal-001",
+  "patientRef": "Patient/pat-abnormal-001",
+  "tags": "results-followup,nl-query",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-t2dm-abnormal-001",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "44054006",
+      "display": "Type 2 diabetes mellitus"
+     }
+    ],
+    "text": "Type 2 diabetes mellitus"
+   },
+   "subject": {
+    "reference": "Patient/pat-abnormal-001"
+   },
+   "recordedDate": "2021-06-01"
+  }
+ },
+ {
+  "resourceType": "DiagnosticReport",
+  "resourceId": "dr-abnormal-001",
+  "patientRef": "Patient/pat-abnormal-001",
+  "tags": "results-followup",
+  "resource": {
+   "resourceType": "DiagnosticReport",
+   "id": "dr-abnormal-001",
+   "status": "final",
+   "category": [
+    {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+       "code": "CH",
+       "display": "Chemistry"
+      }
+     ]
+    }
+   ],
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+     }
+    ],
+    "text": "HbA1c"
+   },
+   "subject": {
+    "reference": "Patient/pat-abnormal-001"
+   },
+   "effectiveDateTime": "2026-05-18",
+   "issued": "2026-05-18T14:30:00Z",
+   "result": [
+    {
+     "reference": "Observation/obs-a1c-001"
+    }
+   ],
+   "conclusion": "HbA1c markedly elevated at 11.2%, consistent with poorly controlled diabetes."
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-a1c-001",
+  "patientRef": "Patient/pat-abnormal-001",
+  "tags": "results-followup,nl-query",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-a1c-001",
+   "status": "final",
+   "category": [
+    {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+       "code": "laboratory"
+      }
+     ]
+    }
+   ],
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ],
+    "text": "HbA1c"
+   },
+   "subject": {
+    "reference": "Patient/pat-abnormal-001"
+   },
+   "effectiveDateTime": "2026-05-18",
+   "valueQuantity": {
+    "value": 11.2,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   },
+   "interpretation": [
+    {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+       "code": "HH",
+       "display": "Critically high"
+      }
+     ]
+    }
+   ],
+   "referenceRange": [
+    {
+     "high": {
+      "value": 5.6,
+      "unit": "%"
+     },
+     "text": "4.0 - 5.6 %"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Encounter",
+  "resourceId": "enc-abnormal-001",
+  "patientRef": "Patient/pat-abnormal-001",
+  "tags": "results-followup",
+  "resource": {
+   "resourceType": "Encounter",
+   "id": "enc-abnormal-001",
+   "status": "finished",
+   "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+   },
+   "subject": {
+    "reference": "Patient/pat-abnormal-001"
+   },
+   "period": {
+    "start": "2026-05-18T14:00:00Z",
+    "end": "2026-05-18T14:20:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-prior-auth-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-prior-auth-001",
+   "name": [
+    {
+     "use": "official",
+     "family": "Chen",
+     "given": [
+      "Maria"
+     ],
+     "prefix": [
+      "Ms"
+     ]
+    }
+   ],
+   "gender": "female",
+   "birthDate": "1979-09-22",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "8234876015"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40224917"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "3 Birch Grove"
+     ],
+     "city": "Valebrook",
+     "postalCode": "VB1 8RN"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0771 224 9171"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Coverage",
+  "resourceId": "cov-prior-auth-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "Coverage",
+   "id": "cov-prior-auth-001",
+   "status": "active",
+   "beneficiary": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "payor": [
+    {
+     "display": "Horizon Health Plan"
+    }
+   ],
+   "class": [
+    {
+     "type": {
+      "coding": [
+       {
+        "code": "plan"
+       }
+      ]
+     },
+     "value": "HHP-PPO-Gold",
+     "name": "PPO Gold"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-t2dm-pa-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-t2dm-pa-001",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "44054006",
+      "display": "Type 2 diabetes mellitus"
+     }
+    ],
+    "text": "Type 2 diabetes mellitus"
+   },
+   "subject": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "recordedDate": "2020-02-10"
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-obesity-pa-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-obesity-pa-001",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "414916001",
+      "display": "Obesity"
+     }
+    ],
+    "text": "Obesity (class II)"
+   },
+   "subject": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "recordedDate": "2022-08-01"
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "resourceId": "med-metformin-pa-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "MedicationRequest",
+   "id": "med-metformin-pa-001",
+   "status": "active",
+   "intent": "order",
+   "medicationCodeableConcept": {
+    "coding": [
+     {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "6809",
+      "display": "Metformin"
+     }
+    ],
+    "text": "Metformin 1000mg BID"
+   },
+   "subject": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "authoredOn": "2020-03-01",
+   "note": [
+    {
+     "text": "Maximal tolerated dose; inadequate glycaemic and weight response after 12 months."
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "resourceId": "med-phentermine-pa-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "MedicationRequest",
+   "id": "med-phentermine-pa-001",
+   "status": "completed",
+   "intent": "order",
+   "medicationCodeableConcept": {
+    "coding": [
+     {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "8152",
+      "display": "Phentermine"
+     }
+    ],
+    "text": "Phentermine 37.5mg"
+   },
+   "subject": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "authoredOn": "2023-01-15",
+   "note": [
+    {
+     "text": "Trial discontinued after 3 months for insufficient weight loss (<3%)."
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-bmi-pa-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-bmi-pa-001",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "39156-5",
+      "display": "Body mass index"
+     }
+    ],
+    "text": "BMI"
+   },
+   "subject": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "effectiveDateTime": "2026-04-30",
+   "valueQuantity": {
+    "value": 38.4,
+    "unit": "kg/m2",
+    "system": "http://unitsofmeasure.org",
+    "code": "kg/m2"
+   }
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-a1c-pa-001",
+  "patientRef": "Patient/pat-prior-auth-001",
+  "tags": "prior-auth",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-a1c-pa-001",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ],
+    "text": "HbA1c"
+   },
+   "subject": {
+    "reference": "Patient/pat-prior-auth-001"
+   },
+   "effectiveDateTime": "2026-04-30",
+   "valueQuantity": {
+    "value": 8.5,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   },
+   "referenceRange": [
+    {
+     "high": {
+      "value": 5.6,
+      "unit": "%"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-cohort-001",
+  "patientRef": "Patient/pat-cohort-001",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-cohort-001",
+   "name": [
+    {
+     "family": "Okafor",
+     "given": [
+      "Ada"
+     ],
+     "prefix": [
+      "Ms"
+     ]
+    }
+   ],
+   "gender": "female",
+   "birthDate": "1972-11-05",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "3345761238"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40331542"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "88 Mill Lane"
+     ],
+     "city": "Elmsworth",
+     "postalCode": "EW3 2JT"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0772 331 5422"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-cohort-001",
+  "patientRef": "Patient/pat-cohort-001",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-cohort-001",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "44054006",
+      "display": "Type 2 diabetes mellitus"
+     }
+    ],
+    "text": "Type 2 diabetes mellitus"
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-001"
+   }
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-cohort-a1c-001",
+  "patientRef": "Patient/pat-cohort-001",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-cohort-a1c-001",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ]
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-001"
+   },
+   "effectiveDateTime": "2026-04-10",
+   "valueQuantity": {
+    "value": 9.8,
+    "unit": "%",
+    "code": "%"
+   }
+  }
+ },
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-cohort-002",
+  "patientRef": "Patient/pat-cohort-002",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-cohort-002",
+   "name": [
+    {
+     "family": "Novak",
+     "given": [
+      "Petr"
+     ],
+     "prefix": [
+      "Mr"
+     ]
+    }
+   ],
+   "gender": "male",
+   "birthDate": "1959-07-19",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "4456652349"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40437218"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "27 Station Road"
+     ],
+     "city": "Cedarbridge",
+     "postalCode": "CB5 7LH"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0773 437 2183"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-cohort-002",
+  "patientRef": "Patient/pat-cohort-002",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-cohort-002",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "44054006",
+      "display": "Type 2 diabetes mellitus"
+     }
+    ],
+    "text": "Type 2 diabetes mellitus"
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-002"
+   }
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-cohort-a1c-002",
+  "patientRef": "Patient/pat-cohort-002",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-cohort-a1c-002",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ]
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-002"
+   },
+   "effectiveDateTime": "2026-03-02",
+   "valueQuantity": {
+    "value": 10.5,
+    "unit": "%",
+    "code": "%"
+   }
+  }
+ },
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-cohort-003",
+  "patientRef": "Patient/pat-cohort-003",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-cohort-003",
+   "name": [
+    {
+     "family": "Haddad",
+     "given": [
+      "Layla"
+     ],
+     "prefix": [
+      "Ms"
+     ]
+    }
+   ],
+   "gender": "female",
+   "birthDate": "1985-01-30",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "5567622643"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40542873"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "52 Meadow Close"
+     ],
+     "city": "Cedar Vale",
+     "postalCode": "CV6 1DP"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0774 542 8734"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-cohort-003",
+  "patientRef": "Patient/pat-cohort-003",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-cohort-003",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "44054006",
+      "display": "Type 2 diabetes mellitus"
+     }
+    ],
+    "text": "Type 2 diabetes mellitus"
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-003"
+   }
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-cohort-a1c-003",
+  "patientRef": "Patient/pat-cohort-003",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-cohort-a1c-003",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ]
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-003"
+   },
+   "effectiveDateTime": "2026-04-20",
+   "valueQuantity": {
+    "value": 7.2,
+    "unit": "%",
+    "code": "%"
+   }
+  }
+ },
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-cohort-004",
+  "patientRef": "Patient/pat-cohort-004",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-cohort-004",
+   "name": [
+    {
+     "family": "Silva",
+     "given": [
+      "Mateus"
+     ],
+     "prefix": [
+      "Mr"
+     ]
+    }
+   ],
+   "gender": "male",
+   "birthDate": "1963-12-02",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "6678434560"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40648529"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "9 Chapel Street"
+     ],
+     "city": "Valebrook",
+     "postalCode": "VB4 6WS"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0775 648 5295"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Condition",
+  "resourceId": "cond-cohort-004",
+  "patientRef": "Patient/pat-cohort-004",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Condition",
+   "id": "cond-cohort-004",
+   "clinicalStatus": {
+    "coding": [
+     {
+      "code": "active"
+     }
+    ]
+   },
+   "code": {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "44054006",
+      "display": "Type 2 diabetes mellitus"
+     }
+    ],
+    "text": "Type 2 diabetes mellitus"
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-004"
+   }
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-cohort-a1c-004",
+  "patientRef": "Patient/pat-cohort-004",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-cohort-a1c-004",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ]
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-004"
+   },
+   "effectiveDateTime": "2025-08-15",
+   "valueQuantity": {
+    "value": 9.5,
+    "unit": "%",
+    "code": "%"
+   }
+  }
+ },
+ {
+  "resourceType": "Patient",
+  "resourceId": "pat-cohort-005",
+  "patientRef": "Patient/pat-cohort-005",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Patient",
+   "id": "pat-cohort-005",
+   "name": [
+    {
+     "family": "Andersson",
+     "given": [
+      "Erik"
+     ],
+     "prefix": [
+      "Mr"
+     ]
+    }
+   ],
+   "gender": "male",
+   "birthDate": "1990-05-14",
+   "identifier": [
+    {
+     "system": "https://fhir.nhs.uk/Id/nhs-number",
+     "value": "6789325670"
+    },
+    {
+     "system": "https://fhir.fast.health/Id/hospital-number",
+     "value": "40754196"
+    }
+   ],
+   "address": [
+    {
+     "country": "GB",
+     "line": [
+      "31 The Crescent"
+     ],
+     "city": "Elmsworth",
+     "postalCode": "EW8 9AG"
+    }
+   ],
+   "telecom": [
+    {
+     "system": "phone",
+     "use": "home",
+     "value": "0776 754 1966"
+    }
+   ]
+  }
+ },
+ {
+  "resourceType": "Observation",
+  "resourceId": "obs-cohort-a1c-005",
+  "patientRef": "Patient/pat-cohort-005",
+  "tags": "nl-query",
+  "resource": {
+   "resourceType": "Observation",
+   "id": "obs-cohort-a1c-005",
+   "status": "final",
+   "code": {
+    "coding": [
+     {
+      "system": "http://loinc.org",
+      "code": "4548-4",
+      "display": "Hemoglobin A1c"
+     }
+    ]
+   },
+   "subject": {
+    "reference": "Patient/pat-cohort-005"
+   },
+   "effectiveDateTime": "2026-05-01",
+   "valueQuantity": {
+    "value": 5.4,
+    "unit": "%",
+    "code": "%"
+   }
+  }
+ }
+]

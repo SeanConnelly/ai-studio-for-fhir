@@ -1,0 +1,63 @@
+{
+  "id": "conversational-triage",
+  "name": "Conversational Triage Assistant",
+  "category": "Triage",
+  "description": "A guided triage conversation: the agent designs patient-specific screening questions (red-flag first), the patient answers in a friendly chat, and the agent writes a colour-coded clinician handoff grounded in the actual answers - saved to FHIR as a QuestionnaireResponse.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": null,
+    "condition": "triage-conversation"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0097"
+    },
+    {
+      "key": "chiefComplaint",
+      "type": "text",
+      "label": "Chief complaint",
+      "required": true,
+      "default": "chest discomfort for 2 days"
+    },
+    {
+      "key": "answers",
+      "type": "text",
+      "label": "Conversation answers (filled by the chat)",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Questionnaire",
+      "QuestionnaireResponse",
+      "Condition",
+      "Observation",
+      "ServiceRequest",
+      "Encounter"
+    ],
+    "sql": [],
+    "vector": []
+  },
+  "agent": {
+    "role": "triage-assistant",
+    "instruction": "Gather symptoms, duration, severity, red flags, and relevant history through structured questions. Recommend an urgency level as draft triage support, map answers to coded observations where possible, and summarise for a clinician. Avoid unsafe autonomous advice.",
+    "outputSchema": "triage-summary"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "QuestionnaireResponse",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0097",
+    "context": {
+      "chiefComplaint": "chest discomfort for 2 days",
+      "answers": ""
+    }
+  }
+}

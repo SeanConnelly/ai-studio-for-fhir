@@ -1,0 +1,330 @@
+{
+  "description": "The 'Surprise me' question catalogue for the Ask (NL->FHIR) explorer. Every expanded variant is pre-built into the LLM cache (scripts/build-ask-cache.mjs) so a random question always replays a REAL Grok translation key-free, while the generated SQL executes live. The expansion logic lives in frontend/shared/lib/ask-questions.mjs and is shared verbatim by the UI and the cache builder - the strings must match byte for byte.",
+  "templates": [
+    {
+      "id": "cohort-test-window",
+      "text": "Show {cond} patients with {test} above {thr} in the last {months} months",
+      "slots": {
+        "cond|test|thr": [
+          "diabetic|HbA1c|8",
+          "diabetic|HbA1c|9",
+          "diabetic|HbA1c|10",
+          "hypertensive|systolic blood pressure|140",
+          "hypertensive|systolic blood pressure|160",
+          "hyperlipidaemic|LDL cholesterol|130",
+          "hyperlipidaemic|LDL cholesterol|160",
+          "hyperlipidaemic|LDL cholesterol|190"
+        ],
+        "months": [
+          "3",
+          "6",
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "count-condition",
+      "text": "How many patients have {cond}?",
+      "slots": {
+        "cond": [
+          "type 2 diabetes",
+          "hypertension",
+          "heart failure",
+          "COPD",
+          "depression",
+          "chronic kidney disease",
+          "obesity",
+          "atrial fibrillation",
+          "hyperlipidaemia"
+        ]
+      }
+    },
+    {
+      "id": "demographic-condition",
+      "text": "List {gender} patients over {age} with {cond}",
+      "slots": {
+        "gender": [
+          "female",
+          "male"
+        ],
+        "age": [
+          "65",
+          "75"
+        ],
+        "cond": [
+          "type 2 diabetes",
+          "hypertension",
+          "heart failure",
+          "COPD",
+          "atrial fibrillation",
+          "obesity"
+        ]
+      }
+    },
+    {
+      "id": "on-medication",
+      "text": "Which patients are currently taking {med}?",
+      "slots": {
+        "med": [
+          "metformin",
+          "lisinopril",
+          "amlodipine",
+          "atorvastatin",
+          "sertraline",
+          "tiotropium",
+          "apixaban",
+          "furosemide"
+        ]
+      }
+    },
+    {
+      "id": "condition-medication",
+      "text": "Which patients with {cond} are taking {med}?",
+      "slots": {
+        "cond|med": [
+          "type 2 diabetes|metformin",
+          "type 2 diabetes|atorvastatin",
+          "hypertension|lisinopril",
+          "hypertension|amlodipine",
+          "heart failure|furosemide",
+          "COPD|tiotropium",
+          "depression|sertraline",
+          "atrial fibrillation|apixaban",
+          "chronic kidney disease|lisinopril",
+          "hyperlipidaemia|atorvastatin"
+        ]
+      }
+    },
+    {
+      "id": "vaccine-overdue",
+      "text": "Which patients over {age} have not had {vacc} vaccination in the last 12 months?",
+      "slots": {
+        "age": [
+          "65",
+          "75"
+        ],
+        "vacc": [
+          "an influenza",
+          "a COVID-19",
+          "a pneumococcal"
+        ]
+      }
+    },
+    {
+      "id": "ed-recent",
+      "text": "Which patients had an emergency attendance in the last {days} days?",
+      "slots": {
+        "days": [
+          "30",
+          "60",
+          "90"
+        ]
+      }
+    },
+    {
+      "id": "admission-condition",
+      "text": "Which patients with {cond} had an inpatient admission in the last 6 months?",
+      "slots": {
+        "cond": [
+          "heart failure",
+          "COPD",
+          "type 2 diabetes",
+          "chronic kidney disease"
+        ]
+      }
+    },
+    {
+      "id": "average-test",
+      "text": "What is the average {test} across patients with {cond}?",
+      "slots": {
+        "test|cond": [
+          "HbA1c|type 2 diabetes",
+          "LDL cholesterol|hyperlipidaemia",
+          "systolic blood pressure|hypertension",
+          "BMI|obesity",
+          "eGFR|chronic kidney disease",
+          "HbA1c|obesity"
+        ]
+      }
+    },
+    {
+      "id": "comorbidity-pair",
+      "text": "Which patients have both {c1} and {c2}?",
+      "slots": {
+        "c1|c2": [
+          "type 2 diabetes|hypertension",
+          "type 2 diabetes|obesity",
+          "type 2 diabetes|chronic kidney disease",
+          "heart failure|atrial fibrillation",
+          "COPD|depression",
+          "hypertension|hyperlipidaemia",
+          "obesity|hypertension",
+          "heart failure|chronic kidney disease"
+        ]
+      }
+    },
+    {
+      "id": "gender-breakdown",
+      "text": "How many {cond} patients are there of each gender?",
+      "slots": {
+        "cond": [
+          "type 2 diabetes",
+          "hypertension",
+          "COPD",
+          "depression",
+          "obesity"
+        ]
+      }
+    },
+    {
+      "id": "trend-first-vs-latest",
+      "text": "Which {cond} patients' latest {test} is higher than their first recorded {test}?",
+      "slots": {
+        "cond|test": [
+          "diabetic|HbA1c",
+          "hyperlipidaemic|LDL cholesterol"
+        ]
+      }
+    },
+    {
+      "id": "below-threshold",
+      "text": "Which patients have {test} below {thr}?",
+      "slots": {
+        "test|thr": [
+          "eGFR|60",
+          "eGFR|45",
+          "haemoglobin|12"
+        ]
+      }
+    },
+    {
+      "id": "bp-polypharmacy",
+      "text": "Which patients are taking {n} or more different blood pressure medicines?",
+      "slots": {
+        "n": [
+          "two",
+          "three"
+        ]
+      }
+    },
+    {
+      "id": "oldest-with-condition",
+      "text": "Who are the 10 oldest patients with {cond}?",
+      "slots": {
+        "cond": [
+          "type 2 diabetes",
+          "hypertension",
+          "heart failure",
+          "COPD",
+          "atrial fibrillation",
+          "obesity"
+        ]
+      }
+    },
+    {
+      "id": "frequent-encounters",
+      "text": "Which patients had more than {n} encounters in the last year?",
+      "slots": {
+        "n": [
+          "2",
+          "3"
+        ]
+      }
+    },
+    {
+      "id": "med-test-threshold",
+      "text": "Which patients on {med} have {test} above {thr}?",
+      "slots": {
+        "med|test|thr": [
+          "metformin|HbA1c|9",
+          "metformin|HbA1c|10",
+          "atorvastatin|LDL cholesterol|160",
+          "lisinopril|systolic blood pressure|140",
+          "lisinopril|systolic blood pressure|160",
+          "furosemide|creatinine|1.3"
+        ]
+      }
+    },
+    {
+      "id": "condition-no-vaccine",
+      "text": "Which patients with {cond} have no {vacc} vaccination on record?",
+      "slots": {
+        "cond|vacc": [
+          "COPD|influenza",
+          "type 2 diabetes|influenza",
+          "heart failure|influenza",
+          "COPD|pneumococcal",
+          "heart failure|pneumococcal",
+          "chronic kidney disease|influenza"
+        ]
+      }
+    },
+    {
+      "id": "highest-value",
+      "text": "What is the highest recorded {test} and which patient does it belong to?",
+      "slots": {
+        "test": [
+          "HbA1c",
+          "LDL cholesterol",
+          "systolic blood pressure",
+          "BMI",
+          "creatinine"
+        ]
+      }
+    },
+    {
+      "id": "treatment-gap",
+      "text": "Which patients with {cond} are not taking {med}?",
+      "slots": {
+        "cond|med": [
+          "type 2 diabetes|metformin",
+          "hypertension|lisinopril",
+          "hyperlipidaemia|atorvastatin",
+          "depression|sertraline",
+          "atrial fibrillation|apixaban"
+        ]
+      }
+    },
+    {
+      "id": "trig-threshold",
+      "text": "Show patients with triglycerides above {thr}",
+      "slots": {
+        "thr": [
+          "250",
+          "300"
+        ]
+      }
+    },
+    {
+      "id": "bp-trend",
+      "text": "Which hypertensive patients' latest systolic blood pressure is higher than their first recorded reading?",
+      "slots": {}
+    },
+    {
+      "id": "avg-glucose",
+      "text": "What is the average fasting glucose across patients with type 2 diabetes?",
+      "slots": {}
+    },
+    {
+      "id": "low-hdl",
+      "text": "Which patients have HDL cholesterol below 40?",
+      "slots": {}
+    },
+    {
+      "id": "ckd-urea",
+      "text": "Which patients with chronic kidney disease have urea above {thr}?",
+      "slots": {
+        "thr": [
+          "8",
+          "10"
+        ]
+      }
+    },
+    {
+      "id": "weight-trend",
+      "text": "Which patients gained weight between their first and most recent weight readings?",
+      "slots": {}
+    }
+  ],
+  "exclusions": []
+}

@@ -1,0 +1,24 @@
+# Force LF on checkout for everything textual.
+#
+# Why: judges clone on Windows where Git for Windows defaults to core.autocrlf=true.
+# Without this file, every text file (iris.script, create-fast-namespace.script,
+# *.sh, *.cls, seed JSON) checks out with CRLF, gets COPY'd into the Linux Docker
+# image by `docker compose up --build`, and the build breaks. LF is safe on all
+# platforms; modern Windows editors handle it fine.
+* text=auto eol=lf
+
+# Binary assets — never touch line endings.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.mp4 binary

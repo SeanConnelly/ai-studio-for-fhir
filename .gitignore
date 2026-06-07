@@ -1,0 +1,49 @@
+# IRIS durable mount
+irisdata/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# TypeScript build
+*.tsbuildinfo
+
+# Env / secrets (never commit API keys)
+.env
+.env.local
+*.env
+grok-api-key.env
+# Plaintext demo-key working files used by the rotation runbook (docs/demo-llm-key.md).
+# The SHIPPED key is the obscured seed/llm-key.b64 (deliberately committed); the
+# raw key must never land in git.
+new-demo-key.txt
+demo-key*.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IRIS work outputs
+work/
+
+# ── Private tooling — kept out of the PUBLIC repo ──
+# These power the dev workflow but are not needed to build/run the app
+# (docker compose up --build uses none of them). Anchored with a leading "/"
+# so they only match at the repo root — iris/src/, frontend/package.json,
+# scripts/build-*.mjs are deliberately NOT matched.
+.claude/
+/src/
+/package.json
+/package-lock.json
+/tsconfig.json
+/scripts/iris.sh
+/docker-compose.dev.yml
+/CLAUDE.md

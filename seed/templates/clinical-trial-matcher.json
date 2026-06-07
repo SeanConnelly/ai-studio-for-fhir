@@ -1,0 +1,62 @@
+{
+  "id": "clinical-trial-matcher",
+  "name": "Clinical Trial Matcher",
+  "category": "Research",
+  "description": "Match a patient against a clinical-trial registry: the patient profile drives semantic retrieval of candidate trials, and the agent grades each as likely / maybe / unlikely with cited criteria, washout flags, confidence, and follow-up questions for missing data.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "Patient",
+    "condition": "trial-match"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0001"
+    },
+    {
+      "key": "followUpAnswers",
+      "type": "text",
+      "label": "Answers to follow-up questions (optional)",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Patient",
+      "Condition",
+      "Observation",
+      "MedicationRequest",
+      "MedicationStatement",
+      "Procedure",
+      "DocumentReference"
+    ],
+    "sql": [
+      "recent_labs"
+    ],
+    "vector": [
+      "trial_criteria"
+    ],
+    "vectorQueryFrom": "patient-profile",
+    "vectorTopK": 6
+  },
+  "agent": {
+    "role": "research-coordinator",
+    "instruction": "You are a clinical research coordinator assistant. Assess the patient against each candidate trial retrieved from the registry (and ONLY those trials). Grade each likely / maybe / unlikely with a confidence score, cite the patient values that satisfy or fail each criterion, flag cautions such as medication washouts, and ask specific follow-up questions where missing data would change a grade. When the clinician has answered earlier questions, treat the answers as verified evidence and regrade.",
+    "outputSchema": "trial-match"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "Task",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0001",
+    "context": {
+      "followUpAnswers": ""
+    }
+  }
+}

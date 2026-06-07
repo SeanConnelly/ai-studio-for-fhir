@@ -1,0 +1,36 @@
+{
+  "id": "results-followup",
+  "name": "Abnormal Results Follow-Up Agent",
+  "category": "Patient Safety",
+  "description": "Detect abnormal diagnostic results that have no documented follow-up and draft a clinician Task to close the loop.",
+  "trigger": {
+    "type": "fhir-event",
+    "resourceType": "DiagnosticReport",
+    "condition": "abnormal-result"
+  },
+  "inputs": [
+    { "key": "patient", "type": "patient", "label": "Patient", "required": true, "default": "Patient/pat-abnormal-001" },
+    { "key": "diagnosticReportId", "type": "fhir-reference", "resourceType": "DiagnosticReport", "dependsOn": "patient", "label": "Abnormal report", "required": true, "default": "DiagnosticReport/dr-abnormal-001" }
+  ],
+  "evidence": {
+    "fhir": ["Patient", "DiagnosticReport", "Observation", "Task", "ServiceRequest", "Appointment"],
+    "sql": ["abnormal_result_followup_status"],
+    "vector": ["clinical_followup_guidance"]
+  },
+  "agent": {
+    "role": "care-coordinator",
+    "instruction": "Determine whether this abnormal result has documented follow-up (a Task, ServiceRequest, Appointment, or care-plan activity). If no follow-up exists, explain why the loop appears open and recommend a safe next action.",
+    "outputSchema": "evidence-recommendation-action"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "Task",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/pat-abnormal-001",
+    "context": {
+      "diagnosticReportId": "DiagnosticReport/dr-abnormal-001"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "care-plan-navigator",
+  "name": "Care Plan Navigator",
+  "category": "Care Coordination",
+  "description": "Turn a CarePlan and its Goals into an actionable next-step view: what to do next, who owns it, and why.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "CarePlan",
+    "condition": "next-best-action"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0001"
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "CarePlan",
+      "Goal",
+      "Task",
+      "Appointment",
+      "MedicationRequest",
+      "Observation"
+    ],
+    "sql": [
+      "overdue_tasks",
+      "offtrack_goals"
+    ],
+    "vector": []
+  },
+  "agent": {
+    "role": "care-coordinator",
+    "instruction": "Assess whether each goal is improving, stable, worsening, overdue, blocked, or completed. Recommend next best actions with an owner and rationale, and draft Task suggestions for overdue items.",
+    "outputSchema": "care-plan-navigation"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "Task",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0001",
+    "context": {}
+  }
+}

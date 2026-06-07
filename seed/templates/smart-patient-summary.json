@@ -1,0 +1,66 @@
+{
+  "id": "smart-patient-summary",
+  "name": "Smart Patient Summary Generator",
+  "category": "Clinical Summary",
+  "description": "Build a concise, role-aware clinical snapshot from a patient's longitudinal FHIR record, prioritising active and recent information.",
+  "trigger": {
+    "type": "manual-or-api",
+    "resourceType": "Patient",
+    "condition": "summary-request"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0001"
+    },
+    {
+      "key": "role",
+      "type": "enum",
+      "label": "Audience",
+      "required": true,
+      "default": "emergency-physician",
+      "options": [
+        "emergency-physician",
+        "care-manager",
+        "patient",
+        "family-caregiver"
+      ]
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Patient",
+      "Condition",
+      "MedicationRequest",
+      "AllergyIntolerance",
+      "Observation",
+      "Encounter",
+      "CarePlan"
+    ],
+    "sql": [
+      "active_conditions",
+      "recent_labs",
+      "recent_encounters"
+    ],
+    "vector": []
+  },
+  "agent": {
+    "role": "clinical-summarizer",
+    "instruction": "Produce a concise clinical snapshot tailored to the requested role (e.g. emergency physician, care manager, patient). Distinguish active from historical, current from discontinued, abnormal from normal. Do not copy raw FHIR into prose.",
+    "outputSchema": "patient-summary"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "DocumentReference",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0001",
+    "context": {
+      "role": "emergency-physician"
+    }
+  }
+}

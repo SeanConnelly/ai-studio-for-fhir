@@ -1,0 +1,50 @@
+{
+  "id": "readmission-risk",
+  "name": "Readmission Risk Workbench",
+  "category": "Risk Stratification",
+  "description": "Estimate short-term readmission risk with transparent, rule-based scoring at discharge and propose explainable interventions.",
+  "trigger": {
+    "type": "fhir-event",
+    "resourceType": "Encounter",
+    "condition": "discharge"
+  },
+  "inputs": [
+    {
+      "key": "patient",
+      "type": "patient",
+      "label": "Patient",
+      "required": true,
+      "default": "Patient/syn-pat-0085"
+    }
+  ],
+  "evidence": {
+    "fhir": [
+      "Patient",
+      "Encounter",
+      "Condition",
+      "Observation",
+      "MedicationRequest",
+      "CarePlan"
+    ],
+    "sql": [
+      "admission_history",
+      "recent_labs",
+      "medication_history"
+    ],
+    "vector": []
+  },
+  "agent": {
+    "role": "care-manager",
+    "instruction": "Compute an explainable, rule-based readmission risk band from recent utilisation, high-risk conditions, abnormal labs, polypharmacy, and missed follow-ups. Show which evidence contributed and propose concrete interventions. This is not a validated predictive model.",
+    "outputSchema": "readmission-risk"
+  },
+  "action": {
+    "type": "draft-fhir-create",
+    "resourceType": "Task",
+    "approvalRequired": true
+  },
+  "testCase": {
+    "patientId": "Patient/syn-pat-0085",
+    "context": {}
+  }
+}
