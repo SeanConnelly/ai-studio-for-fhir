@@ -156,7 +156,7 @@ project stays small and inspectable.
 ## Run it in five minutes
 
 ```bash
-git clone [PLACEHOLDER repo URL]
+git clone https://github.com/SeanConnelly/ai-studio-for-fhir
 cd fhir-agent-studio
 docker compose up --build
 ```
@@ -164,8 +164,7 @@ docker compose up --build
 One command builds the React apps, creates the IRIS namespace and a FHIR endpoint,
 loads and compiles the backend, generates the synthetic patient population and the
 vector embeddings, and starts the interoperability production. When it settles, open
-the **guided demo** at `http://localhost:42773/clinical/#/demo`. (Prefer not to install
-anything? The [live demo][demo] is the same build on a public URL.)
+the **guided demo** at `http://localhost:42773/clinical/#/demo`.
 
 ## A prototype, not a product
 
@@ -186,15 +185,6 @@ working from end to end.
 
 ## What's next
 
-This is the first of three articles. Next is a step by step guide to building your own
-agent in the studio, start to finish, with no code required. After the contest results,
-I will write about how I used AI to assist in the process of building the prototype
-solution.
+The next artical to be posted will take a deep dive into how the solution works end to end.
 
-FHIR Agent Studio is open source and runs from a single command. Open the
-[live demo][demo], browse the [code][repo], or find it on [Open Exchange][oex], and see
-what AI agents for FHIR can be when every step is built to be inspected.
 
-[demo]: # "PLACEHOLDER: live demo URL"
-[repo]: # "PLACEHOLDER: GitHub repo URL"
-[oex]: # "PLACEHOLDER: Open Exchange listing URL"
