@@ -54,7 +54,7 @@ The Studio is the developer portal. Every agent lives in one gallery: open one t
 it, inspect how it was compiled, or edit it. Creating a new agent starts from a blank
 canvas or a ready-made starter, and deploys in a single click.
 
-![The Studio gallery, where every agent can be opened, run, inspected, or edited](../screenshots/FHIR%20Agent%20Studio%20Agents%20Page.png)
+![The Studio gallery, where every agent can be opened, run, inspected, or edited](https://raw.githubusercontent.com/SeanConnelly/ai-studio-for-fhir/main/docs/screenshots/FHIR%20Agent%20Studio%20Agents%20Page.png)
 
 Building an agent is the part I am most proud of. Instead of a wall of configuration,
 you get the agent as a **pipeline of steps**, in the exact order the runtime executes
@@ -64,7 +64,7 @@ search and see what it retrieves. Best of all, you can **preview the exact promp
 agent will send to the model, assembled from the evidence above it, before any AI call
 is made. When you save, the studio compiles seven runtime artifacts and deploys them.
 
-![The Build view: an agent as a pipeline of steps you can test one at a time, with a preview of the exact prompt](../screenshots/FHIR%20Agent%20Studio%20Build%20View%20-%20Smart%20Patient%20Summary%20Generator.png)
+![The Build view: an agent as a pipeline of steps you can test one at a time, with a preview of the exact prompt](https://raw.githubusercontent.com/SeanConnelly/ai-studio-for-fhir/main/docs/screenshots/FHIR%20Agent%20Studio%20Build%20View%20-%20Smart%20Patient%20Summary%20Generator.png)
 
 ## Decision support where clinicians work
 
@@ -75,7 +75,7 @@ list, and the worklists that flag who needs attention. Anything an agent propose
 arrives as a clear card the clinician can sign or decline. Nothing is written to the
 record without a human saying yes.
 
-![Cedar Valley Health: a patient chart with AI decision support woven into the clinician's workflow](../screenshots/Ceder%20Vally%20Health%20Patient%20Records.png)
+![Cedar Valley Health: a patient chart with AI decision support woven into the clinician's workflow](https://raw.githubusercontent.com/SeanConnelly/ai-studio-for-fhir/main/docs/screenshots/Ceder%20Vally%20Health%20Patient%20Records.png)
 
 ## The same intelligence, written for patients
 
@@ -85,7 +85,7 @@ services, and a simple symptom check. It is a reminder that an agent's output is
 structured data, so the same result can be shown to a specialist one way and to a
 patient another.
 
-![The patient portal: results, care plan, and support in plain language on a phone](../screenshots/Patient%20Portal%20Mobile%20Application.png)
+![The patient portal: results, care plan, and support in plain language on a phone](https://raw.githubusercontent.com/SeanConnelly/ai-studio-for-fhir/main/docs/screenshots/Patient%20Portal%20Mobile%20Application.png)
 
 ## A few of the twelve agents
 
