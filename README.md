@@ -19,10 +19,7 @@ Built for the InterSystems **"AI Agents for FHIR"** programming contest
 
 ## Demo video
 
-<!-- Replace with the YouTube link once recorded. Script: docs/video-script.md -->
-▶️ **Main demo (about 7 minutes): _link coming soon_.** A guided run through the
-headline workflows. Two follow up videos ("build a new agent yourself" and "under the
-hood") land during voting week.
+▶️ **Main demo  coming soon_.**
 
 ---
 
