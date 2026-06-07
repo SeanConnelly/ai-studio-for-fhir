@@ -47,3 +47,16 @@ work/
 /scripts/iris.sh
 /docker-compose.dev.yml
 /CLAUDE.md
+
+# ── docs: keep internal planning / runbooks / strategy out of the PUBLIC repo ──
+# Ignore every top-level docs/*.md, then re-include only the judge-facing ones the
+# README links. New internal docs are therefore private by default. NOTE: this only
+# matches files directly in docs/ — docs/articles/ and docs/screenshots/ are NOT
+# affected (they stay public).
+docs/*.md
+!docs/architecture.md
+!docs/diagrams.md
+!docs/use-cases.md
+!docs/demo-script.md
+!docs/troubleshooting.md
+!docs/embedded-python-bug.md
