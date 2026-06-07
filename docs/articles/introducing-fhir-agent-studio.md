@@ -33,7 +33,7 @@ each with a plain-language description, a "Try it" link straight to the right sc
 and a note on what to watch for. You do not need to know anything about the project to
 explore the whole thing in a few minutes.
 
-![The guided demo: all twelve agents, each with a description and a Try it link](https://github.com/SeanConnelly/ai-studio-for-fhir/tree/main/docs/screenshots/The%20Demo%20Page.png)
+![The guided demo: all twelve agents, each with a description and a Try it link](https://raw.githubusercontent.com/SeanConnelly/ai-studio-for-fhir/main/docs/screenshots/the-demo-page.png)
 
 ## What an agent is
 
