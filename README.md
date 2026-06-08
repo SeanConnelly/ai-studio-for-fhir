@@ -100,7 +100,7 @@ bakes the entire demo (the SPA build, the ObjectScript, 1,000 FHIR patients, and
 embeddings), so it takes several minutes. Every later start is seconds.
 
 ```bash
-git clone https://github.com/<your-org>/fhir-agent-studio.git
+git clone https://github.com/SeanConnelly/ai-studio-for-fhir
 cd fhir-agent-studio
 docker compose up --build
 ```
