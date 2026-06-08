@@ -101,7 +101,7 @@ embeddings), so it takes several minutes. Every later start is seconds.
 
 ```bash
 git clone https://github.com/SeanConnelly/ai-studio-for-fhir
-cd fhir-agent-studio
+cd ai-studio-for-fhir
 docker compose up --build
 ```
 
