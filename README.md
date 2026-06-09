@@ -266,7 +266,7 @@ leans on every part of it:
 | **IPM / module.xml** | Package first; `zpm load` provisions everything at build | `module.xml`; build log |
 | **Docker** | One command `docker compose up --build` | [Quick start](#quick-start) |
 | **Bug found and reported** | Reproducible in-process Embedded Python crash on `irishealth-community` 2026.x (a regression vs 2025.3) | [`docs/embedded-python-bug.md`](docs/embedded-python-bug.md) |
-| **Online demo / videos / articles** | _Links added as they go live_ | This section |
+| **Online demo / videos / articles** | https://community.intersystems.com/ https://community.intersystems.com/post/introducing-fhir-agent-studio-ai-agents-fhir-intersystems-iris https://community.intersystems.com/post/fhir-agent-studio-demo | This section |
 
 ---
 
