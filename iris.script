@@ -9,4 +9,9 @@ do ##class(FAST.Runtime.Runtime).EnsureProduction()
 ; (place + submit two orders through the real pipeline, replaying the cached
 ; packets) could not run during the install. Idempotent for everything else.
 do ##class(FAST.Seed.SeedLoader).SeedDemoState()
+; FINAL step: lock the instance down for the public cloud deploy. Must run after
+; all seeding (the build-time FHIR load uses the default _SYSTEM/SYS credential);
+; rotates privileged passwords off SYS and creates the read-only "viewer" account.
+; The judge-facing apps stay unauthenticated; only the Management Portal is secured.
+do ##class(FAST.Setup).HardenSecurity()
 halt

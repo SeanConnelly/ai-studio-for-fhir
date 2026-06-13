@@ -1,0 +1,22 @@
+name: Dev Cloud Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: intersystems-community/cloud-deployment/.github/workflows/deployment.yml@main
+    with:
+      name: fhir-agent-studio
+      # IRIS for Health (FHIR + interop + vector search) needs more than the
+      # 1Gi default to run comfortably. Bump if the sandbox allows.
+      memory: 2Gi
+      # The container serves IRIS on 52773 (matches the workflow default, so
+      # this is here only for clarity).
+      port: 52773
+    secrets:
+      SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}

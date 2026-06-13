@@ -17,6 +17,34 @@ Built for the InterSystems **"AI Agents for FHIR"** programming contest
 
 ---
 
+## Live demo
+
+A hosted instance runs on the **InterSystems Developer Cloud** — no install required:
+
+| What | Link |
+|---|---|
+| **Guided demo** (start here — a tour of all twelve agents) | https://fhir-agent-studio.sandbox.developer.intersystems.com/clinical/#/demo |
+| **Studio** (the developer portal) | https://fhir-agent-studio.sandbox.developer.intersystems.com/fhir-agent-studio/ |
+| **Clinical app** (clinician + patient views) | https://fhir-agent-studio.sandbox.developer.intersystems.com/clinical/ |
+
+The app pages above need **no login** — just open and explore.
+
+### See the real Interoperability production (optional)
+
+Every agent run is a real IRIS Interoperability message flow. To inspect the live
+production, message traces, and Visual Trace in the Management Portal, a **read-only**
+account is provided:
+
+- **Portal:** https://fhir-agent-studio.sandbox.developer.intersystems.com/csp/sys/UtilHome.csp
+- **Username:** `viewer`
+- **Password:** `ReadOnly-Trace-2026`
+
+Then go to **Interoperability → (namespace) FAST → View → Production / Message Viewer /
+Visual Trace**. This account can view everything but cannot edit, start, or stop
+anything. (This is a public demo instance that is rebuilt on every deploy.)
+
+---
+
 ## Demo video
 
 ▶️ [Main Demo](https://www.youtube.com/watch?v=vktfq_kvNnk)
